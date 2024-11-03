@@ -1,0 +1,589 @@
+﻿@page
+@model Homecare.Pages.ServiceModel
+@{
+    ViewData["Title"] = "Booking Service";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service Booking</title>
+    <style>
+        /* Định dạng chung cho container */
+        .nxcleanly-booking__container {
+            display: flex;
+            flex-direction: row; /* Change to row for horizontal alignment */
+            gap: 20px;
+            align-items: center; /* Align items vertically */
+            margin-top: 20px;
+        }
+
+        /* Căn hàng ngang cho từng dòng các tùy chọn */
+        .nxcleanly-booking__row {
+            display: flex;
+            gap: 20px; /* Khoảng cách giữa các nút trong hàng */
+            justify-content: center; /* Căn giữa hàng */
+        }
+
+        /* Ẩn input radio và định dạng label */
+        .styled-radio input[type="radio"] {
+            display: none;
+        }
+
+        /* Thiết lập label thành button đồng nhất */
+        .styled-radio label {
+            display: inline-flex; /* Ensure labels are treated as flex items */
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            width: 150px; /* Đặt chiều rộng cố định cho các nút */
+            height: 50px; /* Đặt chiều cao cố định cho các nút */
+            border: 2px solid #6a0dad;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            color: #6a0dad;
+            transition: all 0.3s ease;
+            background-color: #f5f3ff;
+        }
+
+            /* Hiệu ứng hover */
+            .styled-radio label:hover {
+                background-color: #e9e5ff;
+            }
+
+        /* Hiệu ứng khi radio được chọn */
+        .styled-radio input[type="radio"]:checked + label {
+            background-color: #6a0dad;
+            color: #ffffff;
+            border-color: #6a0dad;
+        }
+        /* -------------------------------------------------------------------------------- */
+        .clecounter_item .counter__value {
+            width: 80px; /* Chiều rộng tùy chỉnh */
+            height: 30px; /* Chiều cao tùy chỉnh */
+            font-size: 14px; /* Kích thước font nhỏ hơn */
+            padding: 5px; /* Điều chỉnh khoảng cách trong ô */
+            text-align: center; /* Căn giữa nội dung */
+        }
+
+        .nxcleanly-booking__container {
+            display: flex; /* Dùng Flexbox */
+            flex-wrap: wrap; /* Cho phép các mục tự động xuống hàng nếu không đủ chỗ */
+            justify-content: center; /* Căn giữa các mục trong hàng */
+            gap: 15px; /* Khoảng cách giữa các mục */
+            max-width: 100%; /* Giới hạn chiều rộng tối đa để tránh tràn */
+            overflow: hidden; /* Ẩn phần nội dung tràn ra */
+        }
+
+        .nxcleanly-booking__row.cleanly-about-section {
+            width: 100%; /* Hoặc đặt chiều rộng phù hợp như 80%, 90% nếu muốn */
+            max-width: 600px; /* Điều chỉnh chiều rộng tối đa tùy theo thiết kế */
+            margin: 0 auto; /* Căn giữa khung chính */
+            padding: 20px; /* Thêm padding nếu muốn khoảng cách bên trong */
+            box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước khung */
+        }
+
+        .nxcleanly_booking__home_box.cleanly-nocondition {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 180px; /* Kích thước của mỗi hộp */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            transition: transform 0.2s ease-in-out;
+            margin: 0; /* Loại bỏ margin để tránh tràn */
+        }
+
+            .nxcleanly_booking__home_box.cleanly-nocondition:hover {
+                transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+            }
+
+
+        .preference-icon img {
+            width: 40px; /* Kích thước nhỏ hơn cho ảnh */
+            height: 40px; /* Chiều cao nhỏ hơn cho ảnh */
+        }
+
+        .preference-icon p {
+            margin: 5px 0; /* Khoảng cách giữa chữ và ảnh */
+            font-size: 14px; /* Kích thước chữ */
+        }
+
+        .preference-quantity input,
+        .preference-quantity select {
+            width: 100%; /* Chiều rộng đầy đủ cho input và select */
+            padding: 5px; /* Khoảng cách bên trong */
+            font-size: 14px; /* Kích thước chữ */
+            border: 1px solid #ccc; /* Khung viền mỏng */
+            border-radius: 4px; /* Bo tròn nhẹ cho input và select */
+        }
+
+        .preferences {
+            text-align: left; /* Đảm bảo tất cả nội dung trong preferences được căn lề trái */
+        }
+
+            
+
+        .nxcleanly-booking__row.cleanly-about-section {
+            display: flex; /* Sử dụng Flexbox */
+            flex-wrap: wrap; /* Cho phép các thẻ tự động xuống hàng khi không đủ chỗ */
+            justify-content: center; /* Căn giữa các hộp theo chiều ngang */
+            gap: 15px; /* Khoảng cách giữa các hộp */
+            width: 100%; /* Đảm bảo chiều rộng 100% */
+            max-width: 600px; /* Chiều rộng tối đa */
+            margin: 0 auto; /* Căn giữa khung chính */
+            padding: 20px; /* Padding bên trong */
+            box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước khung */
+            overflow: hidden; /* Ẩn phần nội dung tràn ra */
+        }
+
+        .nxcleanly_booking__home_box.cleanly-nocondition {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 180px; /* Đặt chiều rộng cho các thẻ con */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            transition: transform 0.2s ease-in-out;
+            margin: 0; /* Loại bỏ margin để tránh tràn */
+            flex: 0 1 auto; /* Điều chỉnh để các thẻ có thể thu hẹp nhưng không mở rộng quá mức */
+        }
+
+        .topics {
+            display: flex; /* Make the list a flex container */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            list-style: none; /* Remove default list styles */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+
+        .cleanly-nocondition {
+            flex: 0 0 auto; /* Prevent items from growing or shrinking */
+            margin: 10px; /* Add some spacing between items */
+            width: calc(25% - 20px); /* Set a base width for each item, accounting for margin */
+            box-sizing: border-box; /* Ensure padding and border are included in the total width */
+        }
+
+        .nxcleanly-booking__col.cleanly-custom-fields-section {
+            flex-basis: 100%; /* Đặt chiều rộng chiếm toàn bộ dòng */
+            margin-top: 15px; /* Khoảng cách phía trên nếu cần */
+        }
+
+        .nxcleanly-booking__box_item.cleanly-nocondition, .nxcleanly-booking__box_item {
+            margin: 0; /* Removes any default margin */
+            padding: 0; /* Removes any default padding */
+            display: flex; /* Use flex to align items */
+            align-items: center; /* Center align input and label vertically */
+        }
+
+        .styled-radio2 {
+            margin: 0; /* Removes margin around the styled radio */
+        }
+
+        .nxcleanly-like {
+            margin-right: 5px; /* Adjust as needed for spacing between input and label */
+        }
+
+        .nxcleanly-booking__box_item {
+            padding-left: 40px; /* Adds space below each box item */
+            padding-right: 40px; /* Adds space below each box item */
+        }
+
+        .extra {
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 8px; /* Rounded corners for a softer look */
+            padding: 15px; /* Space inside each list item */
+            margin-bottom: 10px; /* Space between each list item */
+            display: flex;
+            align-items: center; /* Aligns content vertically */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+            transition: transform 0.2s; /* Animation for hover effect */
+        }
+
+            .extra:hover {
+                transform: translateY(-4px); /* Slight lift effect on hover */
+            }
+
+            .extra label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .extra img {
+                max-width: 80px; /* Image size */
+                margin-bottom: 8px; /* Space between image and title */
+            }
+        /* Hide checkboxes */
+        .topics input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Style each <li> as a button */
+        .topics .extra {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            width: 150px;
+            height: 100px; /* Adjust if needed */
+            border: 2px solid #6a0dad;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #6a0dad;
+            background-color: #f5f3ff;
+            transition: all 0.3s ease;
+        }
+
+            /* Hover effect */
+            .topics .extra:hover {
+                background-color: #e9e5ff;
+            }
+
+    </style>
+</head>
+<body>
+    <main class="wp-block-group is-layout-flow wp-block-group-is-layout-flow" id="wp--skip-link--target">
+        <div class="container" style="text-align: center;">
+            <div style="height: var(--wp--preset--spacing--50);" aria-hidden="true" class="wp-block-spacer"></div>
+            <h1 class="wp-block-post-title" style="text-align: center; font-size: 5rem;">Single Form</h1>
+            <div style="margin-top: 0; margin-bottom: 0; height: var(--wp--preset--spacing--30);" aria-hidden="true" class="wp-block-spacer"></div>
+        </div>
+
+
+
+        <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained">
+            <div class="cleanly-single-form-gutenberg ele-1729931532">
+                <section class="booking-details center-block main-block nxcleanly-booking cleanly-form-17">
+                    <div class="nxcleanly-booking_wrapper">
+                        <div class="row">
+                            <div class="nxcleanly-booking__row col-md-8 offset-md-2">
+                                <div class="nxcleanly-booking__col">
+                                    <div class="preference-title-inner">
+                                        <h2 style="text-align: center;">Book your cleaning</h2>
+                                        <p>It’s time to book our cleaning service for your home or apartment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nxcleanly-booking__row form-wrap nxfixed nxsum_right">
+                            <div class="row">
+                                <div class="nxcleanly-booking__col col-md-8 offset-md-2">
+                                    <form action="#" method="post" class="cleanly-booking-submit" data-keys="nxcleanly_booking" data-nonce="72c5208468" data-form="17" data-settings="{&quot;hours_data&quot;:{&quot;enable&quot;:&quot;no&quot;,&quot;type&quot;:&quot;default&quot;,&quot;rate&quot;:0},&quot;hidden_items&quot;:[],&quot;hidden_items_option&quot;:&quot;default&quot;,&quot;currency&quot;:&quot;$&quot;,&quot;tax&quot;:{&quot;disable_tax&quot;:&quot;no&quot;,&quot;tax_type&quot;:&quot;percentage&quot;,&quot;tax_amount&quot;:&quot;20&quot;,&quot;service_fee_enable&quot;:&quot;no&quot;,&quot;service_fee_amount&quot;:&quot;10&quot;},&quot;deposit&quot;:{&quot;disable_deposit&quot;:&quot;no&quot;,&quot;deposit_type&quot;:&quot;percentage&quot;,&quot;deposit_amount&quot;:&quot;20&quot;},&quot;time_of_booked&quot;:&quot;15&quot;,&quot;weekends&quot;:[],&quot;disable_date&quot;:&quot;&quot;,&quot;discount_type&quot;:{&quot;step1_discount_type&quot;:&quot;flat&quot;,&quot;step1_discount_from&quot;:&quot;self&quot;,&quot;step2_discount_type&quot;:&quot;flat&quot;,&quot;step2_discount_from&quot;:&quot;self&quot;,&quot;step3_discount_type&quot;:&quot;flat&quot;,&quot;step4_discount_type&quot;:&quot;flat&quot;,&quot;addi_discount_type&quot;:&quot;flat&quot;},&quot;texts&quot;:{&quot;hometxt&quot;:&quot;About service:&quot;,&quot;extratxt&quot;:&quot;Extra service:&quot;,&quot;addtxt&quot;:&quot;Additional:&quot;,&quot;hourstxt&quot;:&quot;Hours&quot;}}">
+
+                                    <div class="preferences">
+                                        <div class="preference-radio mt-5">
+                                                <h4 style="font-weight: bold; font-size: 24px;">What type of cleaning?</h4>
+                                                <p>Choose your type of Cleaning</p>
+                                                <div class="nxcleanly-booking__container">
+                                                    <div class="nxcleanly-booking__box_item">
+                                                        <div class="styled-radio">
+                                                            <input type="radio" class="nxcleanly-type nxcleanly-type-standard" data-value="20" data-discount="0" data-title="Standard" id="type-standard" name="nxcleanly[cleaning_type]" value="standard">
+                                                            <label for="type-standard">Standard</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nxcleanly-booking__box_item">
+                                                        <div class="styled-radio">
+                                                            <input type="radio" class="nxcleanly-type nxcleanly-type-move" data-value="80" data-discount="0" data-title="Move IN/OUT" id="type-move" name="nxcleanly[cleaning_type]" value="move">
+                                                            <label for="type-move">Move IN/OUT</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                            <div class="preference-radio mt-5">
+                                                <h4 style="font-weight: bold; font-size: 24px;">How often would you like cleaning?</h4>
+                                                <p>Choose the frequency of cleaning</p>
+                                                <div class="cleanly-likes-section">
+                                                    <div class="preference-radio__input_box">
+                                                        <div class="nxcleanly-booking__container">
+                                                            <div class="nxcleanly-booking__box_item cleanly-nocondition">
+                                                                <div class="styled-radio styled-radio2">
+                                                                    <input type="radio" class="nxcleanly-like" id="like-one_time" name="nxcleanly[cleaning_like]" value="one_time" data-days="no" checked="">
+                                                                    <label for="like-one_time">One Time</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="nxcleanly-booking__box_item cleanly-nocondition">
+                                                                <div class="styled-radio styled-radio2">
+                                                                    <input type="radio" class="nxcleanly-like" id="like-weekly" name="nxcleanly[cleaning_like]" value="weekly" data-days="yes">
+                                                                    <label for="like-weekly">Weekly</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="nxcleanly-booking__box_item cleanly-nocondition">
+                                                                <div class="styled-radio styled-radio2">
+                                                                    <input type="radio" class="nxcleanly-like" id="like-every-2-weeks" name="nxcleanly[cleaning_like]" value="every-2-weeks" data-days="yes">
+                                                                    <label for="like-every-2-weeks">Every 2 Weeks</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="nxcleanly-booking__box_item cleanly-nocondition">
+                                                                <div class="styled-radio styled-radio2">
+                                                                    <input type="radio" class="nxcleanly-like" id="like-monthly" name="nxcleanly[cleaning_like]" value="monthly" data-days="yes">
+                                                                    <label for="like-monthly">Monthly</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Checkbox Container -->
+                                                <div class="cleanly-days-like days-items-container" style="display: none;">
+                                                    <div class="day-selector">
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Monday" id="day-mon">
+                                                            <label class="day-name" for="day-mon">Mon</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Tuesday" id="day-tue">
+                                                            <label class="day-name" for="day-tue">Tue</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Wednesday" id="day-wed">
+                                                            <label class="day-name" for="day-wed">Wed</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Thursday" id="day-thu">
+                                                            <label class="day-name" for="day-thu">Thu</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Friday" id="day-fri">
+                                                            <label class="day-name" for="day-fri">Fri</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Saturday" id="day-sat">
+                                                            <label class="day-name" for="day-sat">Sat</label>
+                                                        </div>
+                                                        <div class="day-option">
+                                                            <input type="checkbox" class="cleanly-days" name="nxcleanly[cleaning_days][]" value="Sunday" id="day-sun">
+                                                            <label class="day-name" for="day-sun">Sun</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <div class="preference-radio mt-5 ">
+                                                <h4 style="font-weight: bold; font-size: 24px;">How often would you about home cleaning?</h4>                        
+                                                <p>Choose your home of cleaning</p>                          
+                                                <div class="nxcleanly-booking__row cleanly-about-section ">
+
+                                                <div class="nxcleanly_booking__home_box  cleanly-nocondition">
+                                                    <div class="preference-icon">
+                                                        <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/bed.png" alt="Bedroom">
+                                                        <p>Bedroom</p>
+                                                        <div class="preference-quantity">
+                                                            <div class="clecounter clejs-clecounter">
+                                                                <div class="clecounter_item">
+                                                                    <a class="counter__minus clejs-clecounter-btn dashicons dashicons-minus" aria-hidden="true" data-action="minus"></a>
+                                                                </div>
+                                                                <div class="clecounter_item clecounter_item--center">
+                                                                    <input id="nxhome_bedrooms" class="counter__value clejs-clecounter-value nxcleanly-abouthome nxcleanly-abouthome-bedrooms" name="nxcleanly[abouthome][bedrooms]" type="text" data-value="10" data-discount="0" data-hours="0" data-title="Bedroom" value="2" tabindex="-1" min="0" max="5" required="">
+                                                                </div>
+                                                                <div class="clecounter_item">
+                                                                    <a class="counter__plus clejs-clecounter-btn dashicons dashicons-plus" aria-hidden="true" data-action="plus"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nxcleanly_booking__home_box  cleanly-nocondition">
+                                                    <div class="preference-icon">
+                                                        <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/bath.png" alt="Bathroom">
+                                                        <p>Bathroom</p>
+                                                        <div class="preference-quantity">
+                                                            <div class="clecounter clejs-clecounter">
+                                                                <div class="clecounter_item">
+                                                                    <a class="counter__minus clejs-clecounter-btn dashicons dashicons-minus" aria-hidden="true" data-action="minus"></a>
+                                                                </div>
+                                                                <div class="clecounter_item clecounter_item--center">
+                                                                    <input id="nxhome_bathrooms" class="counter__value clejs-clecounter-value nxcleanly-abouthome nxcleanly-abouthome-bathrooms" name="nxcleanly[abouthome][bathrooms]" type="text" data-value="10" data-discount="0" data-hours="0" data-title="Bathroom" value="3" tabindex="-1" min="0" max="5" required="">
+                                                                </div>
+                                                                <div class="clecounter_item">
+                                                                    <a class="counter__plus clejs-clecounter-btn dashicons dashicons-plus" aria-hidden="true" data-action="plus"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nxcleanly_booking__home_box  cleanly-nocondition">
+                                                    <div class="preference-icon">
+                                                        <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/area.png" alt="Square feet">
+                                                        <p>Square feet</p>
+                                                        <div class="preference-quantity">
+                                                            <select name="nxcleanly[abouthome][squre_feet]" data-settings="{&quot;id&quot;:&quot;squre_feet&quot;,&quot;price&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Square feet&quot;,&quot;icon&quot;:&quot;&quot;,&quot;images&quot;:{&quot;url&quot;:&quot;https:\/\/demo.themedev.net\/cleanly\/wp-content\/plugins\/cleanly\/assets\/images\/area.png&quot;,&quot;id&quot;:&quot;0&quot;},&quot;max_items&quot;:&quot;5&quot;,&quot;default_item&quot;:&quot;1463&quot;,&quot;discount&quot;:&quot;0&quot;,&quot;discount_txt&quot;:&quot;&quot;,&quot;display_child_item&quot;:&quot;yes&quot;,&quot;child_item&quot;:[{&quot;item_id&quot;:&quot;1462&quot;,&quot;item_price&quot;:&quot;20&quot;,&quot;item_title&quot;:&quot;500 - 1000 sq\/ft&quot;},{&quot;item_id&quot;:&quot;1463&quot;,&quot;item_price&quot;:&quot;22&quot;,&quot;item_title&quot;:&quot;1001 - 1499 sq\/ft&quot;},{&quot;item_id&quot;:&quot;1464&quot;,&quot;item_price&quot;:&quot;22&quot;,&quot;item_title&quot;:&quot;1500 - 2000 sq\/ft&quot;}],&quot;display_advance&quot;:&quot;yes&quot;}" class="nxcleanly-select-abouthome nxcleanly-select-abouthome-squre_feet">
+                                                                <option value="0">Square feet</option>
+                                                                <option value="1462">500 – 1000 sq/ft</option>
+                                                                <option value="1463" selected="">1001 – 1499 sq/ft</option>
+                                                                <option value="1464">1500 – 2000 sq/ft</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nxcleanly_booking__home_box  cleanly-nocondition">
+                                                    <div class="preference-icon">
+                                                        <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/area.png" alt="Square feet 2">
+                                                        <p>Square feet 2</p>
+                                                        <div class="preference-quantity">
+                                                            <select name="nxcleanly[abouthome][squre_feet2]" data-settings="{&quot;id&quot;:&quot;squre_feet2&quot;,&quot;price&quot;:&quot;40&quot;,&quot;title&quot;:&quot;Square feet 2&quot;,&quot;icon&quot;:&quot;&quot;,&quot;images&quot;:{&quot;url&quot;:&quot;https:\/\/demo.themedev.net\/cleanly\/wp-content\/plugins\/cleanly\/assets\/images\/area.png&quot;,&quot;id&quot;:&quot;0&quot;},&quot;max_items&quot;:&quot;5&quot;,&quot;default_item&quot;:&quot;1463&quot;,&quot;discount&quot;:&quot;0&quot;,&quot;discount_txt&quot;:&quot;&quot;,&quot;display_child_item&quot;:&quot;yes&quot;,&quot;child_item&quot;:[{&quot;item_id&quot;:&quot;1462&quot;,&quot;item_price&quot;:&quot;20&quot;,&quot;item_title&quot;:&quot;500 - 1000 sq\/ft&quot;},{&quot;item_id&quot;:&quot;1463&quot;,&quot;item_price&quot;:&quot;22&quot;,&quot;item_title&quot;:&quot;1001 - 1499 sq\/ft&quot;},{&quot;item_id&quot;:&quot;1464&quot;,&quot;item_price&quot;:&quot;22&quot;,&quot;item_title&quot;:&quot;1500 - 2000 sq\/ft&quot;}],&quot;display_advance&quot;:&quot;yes&quot;}" class="nxcleanly-select-abouthome nxcleanly-select-abouthome-squre_feet2">
+                                                                <option value="0">Square feet 2</option>
+                                                                <option value="1462">500 – 1000 sq/ft</option>
+                                                                <option value="1463" selected="">1001 – 1499 sq/ft</option>
+                                                                <option value="1464">1500 – 2000 sq/ft</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="preference-radio mt-5">
+                                                <h4 style="font-weight: bold; font-size: 24px;">How often would you any extra?</h4>                            <p>Choose your any extra</p>
+                                                <div class="nxcleanly-booking__row cleanly-extra-section" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                                <div class="nxcleanly-booking__col">
+                                                    <ul class="topics">
+                                                        <li class="cleanly-nocondition extra">
+
+                                                            <input type="checkbox" id="nxcleanly-any_extrasclean_oven" class="nxcleanly-any_extras nxcleanly-any_extras-clean_oven" value="clean_oven" name="nxcleanly[any_extras][]" data-value="20" data-discount="0" data-title="CLEAN OVEN" data-hours="0">
+                                                            <label for="nxcleanly-any_extrasclean_oven">
+                                                                <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/ovencolor.png" alt="CLEAN OVEN">
+                                                                <div class="extras-title">
+                                                                    <h5>
+                                                                        CLEAN OVEN
+                                                                    </h5>
+                                                                </div>
+                                                            </label>
+                                                            <input type="hidden" id="nxcleanly-any_extrasclean_oven-input" value="1" name="nxcleanly[any_extras_qty][clean_oven]">
+                                                        </li>
+                                                            <li class="cleanly-nocondition extra">
+
+                                                            <input type="checkbox" id="nxcleanly-any_extrasclean_windows" class="nxcleanly-any_extras nxcleanly-any_extras-clean_windows" value="clean_windows" name="nxcleanly[any_extras][]" data-value="40" data-discount="0" data-title="CLEAN WINDOWS" data-hours="0">
+                                                            <label for="nxcleanly-any_extrasclean_windows">
+                                                                <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/windowcolor.png" alt="CLEAN WINDOWS">
+                                                                <div class="extras-title">
+                                                                    <h5>
+                                                                        CLEAN WINDOWS
+                                                                    </h5>
+                                                                </div>
+                                                            </label>
+                                                                <input type="hidden" id="nxcleanly-any_extrasclean_oven-input" value="1" name="nxcleanly[any_extras_qty][clean_oven]">
+
+                                                        </li>
+                                                            <li class="cleanly-nocondition extra">
+
+                                                            <input type="checkbox" id="nxcleanly-any_extrasclean_fridge" class="nxcleanly-any_extras nxcleanly-any_extras-clean_fridge" value="clean_fridge" name="nxcleanly[any_extras][]" data-value="40" data-discount="0" data-title="CLEAN FRIDGE" data-hours="0">
+                                                            <label for="nxcleanly-any_extrasclean_fridge">
+                                                                <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/fridgecolor.png" alt="CLEAN FRIDGE">
+                                                                <div class="extras-title">
+                                                                    <h5>
+                                                                        CLEAN FRIDGE
+                                                                    </h5>
+                                                                </div>
+                                                            </label>
+                                                            <input type="hidden" id="nxcleanly-any_extrasclean_fridge-input" value="1" name="nxcleanly[any_extras_qty][clean_fridge]">
+                                                        </li>
+                                                            <li class="cleanly-nocondition extra">
+
+                                                            <input type="checkbox" id="nxcleanly-any_extrasironing" class="nxcleanly-any_extras nxcleanly-any_extras-ironing" value="ironing" name="nxcleanly[any_extras][]" data-value="40" data-discount="0" data-title="IRONING" data-hours="0">
+                                                            <label for="nxcleanly-any_extrasironing">
+                                                                <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/iron.png" alt="IRONING">
+                                                                <div class="extras-title">
+                                                                    <h5>
+                                                                        IRONING
+                                                                    </h5>
+                                                                </div>
+                                                            </label>
+                                                            <input type="hidden" id="nxcleanly-any_extrasironing-input" value="1" name="nxcleanly[any_extras_qty][ironing]">
+                                                        </li>
+                                                            <li class="cleanly-nocondition extra">
+
+                                                            <input type="checkbox" id="nxcleanly-any_extrascarpet" class="nxcleanly-any_extras nxcleanly-any_extras-carpet" value="carpet" name="nxcleanly[any_extras][]" data-value="40" data-discount="0" data-title="Carpet Cleaning" data-hours="0">
+                                                            <label for="nxcleanly-any_extrascarpet">
+                                                                <img decoding="async" src="https://demo.themedev.net/cleanly/wp-content/plugins/cleanly/assets/images/iron.png" alt="Carpet Cleaning">
+                                                                <div class="extras-title">
+                                                                    <h5>
+                                                                        Carpet Cleaning
+                                                                    </h5>
+                                                                </div>
+                                                            </label>
+                                                                <input type="hidden" id="nxcleanly-any_extrasclean_oven-input" value="1" name="nxcleanly[any_extras_qty][clean_oven]">
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                    <div class="nxcleanly-booking__col cleanly-custom-fields-section" style="width: 100%;">
+                                                        <div class="nxcleanly-booking__col" style="width: 100%;">
+                                                            <p class="cl_ex-title" style="width: 100%;">
+                                                                Do you have any special requirements? (optional)
+                                                            </p>
+                                                            <textarea name="nxcleanly[custom][requerments]" id="ext_requerments" class="optinal-textarea cleanly-custom-textarea" style="width: 100%;" rows="5"></textarea>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="nxcleanly-booking__row ">
+                                                <div class="nxcleanly-booking__col">
+                                                    <p class="cleanly-message-list"></p>
+                                                    <button class="btn btn-block complete-booking" type="submit">Confirm booking</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+<script>
+        // JavaScript to toggle checkbox visibility based on selected radio button
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all radio buttons
+        const radioButtons = document.querySelectorAll('input[name="nxcleanly[cleaning_like]"]');
+        const daysContainer = document.querySelector('.days-items-container');
+
+        // Function to toggle visibility based on selected radio
+        function toggleDaysContainer() {
+            const selectedValue = document.querySelector('input[name="nxcleanly[cleaning_like]"]:checked').value;
+            // Show container if selected value is Weekly, Every 2 Weeks, or Monthly
+            if (selectedValue === 'weekly' || selectedValue === 'every-2-weeks' || selectedValue === 'monthly') {
+                daysContainer.style.display = 'block';
+            } else {
+                daysContainer.style.display = 'none';
+            }
+        }
+
+        // Add change event listener to each radio button
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', toggleDaysContainer);
+        });
+
+        // Initial check to set the correct display on page load
+        toggleDaysContainer();
+    });
+
+    document.querySelectorAll('.topics input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                this.closest('.extra').style.backgroundColor = '#6a0dad';
+                this.closest('.extra').style.color = '#ffffff';
+                this.closest('.extra').style.borderColor = '#6a0dad';
+            } else {
+                this.closest('.extra').style.backgroundColor = ''; // Reset to default
+                this.closest('.extra').style.color = '';
+                this.closest('.extra').style.borderColor = '';
+            }
+        });
+    });
+
+</script>
