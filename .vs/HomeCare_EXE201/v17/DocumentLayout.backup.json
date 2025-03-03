@@ -1,0 +1,278 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\cleaner\\pages\\listbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\cleaner\\pages\\listbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\cleaner\\pages\\listbooking.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\cleaner\\pages\\listbooking.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\customer\\pages\\bookingpages\\book.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\customer\\pages\\bookingpages\\book.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\customer\\pages\\bookingpages\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\customer\\pages\\bookingpages\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ECA43CF-4798-442D-999E-E63AA743853B}|HomeCare_Common\\HomeCare_Common.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_common\\emun\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ECA43CF-4798-442D-999E-E63AA743853B}|HomeCare_Common\\HomeCare_Common.csproj|solutionrelative:homecare_common\\emun\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\service\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\service\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\customer\\pages\\bookingpages\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\customer\\pages\\bookingpages\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\identity\\pages\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\areas\\identity\\pages\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\areas\\identity\\pages\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|d:\\fpt\\sem8_spring2025\\exe_201\\homecare_exe201\\homecare_exe201\\pages\\shared\\_layoutlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5599F677-652C-4205-ABA3-F74114612EBC}|HomeCare_EXE201\\HomeCare_EXE201.csproj|solutionrelative:homecare_exe201\\pages\\shared\\_layoutlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListBooking.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAMAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T13:20:18.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ListBooking.cshtml.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml.cs",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml.cs",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Cleaner\\Pages\\ListBooking.cshtml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:15:18.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingStatus.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_Common\\Emun\\BookingStatus.cs",
+              "RelativeDocumentMoniker": "HomeCare_Common\\Emun\\BookingStatus.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_Common\\Emun\\BookingStatus.cs",
+              "RelativeToolTip": "HomeCare_Common\\Emun\\BookingStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:17:51.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Book.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T13:17:32.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Service\\BookService.cs",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Service\\BookService.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Service\\BookService.cs",
+              "RelativeToolTip": "HomeCare_EXE201\\Service\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:14:30.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cshtml.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml.cs",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml.cs",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Book.cshtml.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwEMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:02:49.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Create.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Create.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Create.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Customer\\Pages\\BookingPages\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T13:02:46.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:02:13.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Service\\UserService.cs",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Service\\UserService.cs",
+              "RelativeToolTip": "HomeCare_EXE201\\Service\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T13:01:41.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAAkBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T12:53:32.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterConfirmation.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T12:51:45.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T12:51:43.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_LayoutLogin.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Pages\\Shared\\_LayoutLogin.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Pages\\Shared\\_LayoutLogin.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Pages\\Shared\\_LayoutLogin.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Pages\\Shared\\_LayoutLogin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T12:50:25.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+              "ToolTip": "D:\\FPT\\sem8_spring2025\\EXE_201\\HomeCare_EXE201\\HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "HomeCare_EXE201\\Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T12:49:58.016Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

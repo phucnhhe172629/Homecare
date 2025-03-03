@@ -1,0 +1,83 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Cleaner.Pages.EditProfileModel
+@{
+    var user = Model.User;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/css/editprofile.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="profile-container">
+        <h3>Cập Nhật Hồ Sơ</h3>
+        <div class="profile-img-container">
+            <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <form method="post" asp-page-handler="UpdateProfile">
+            <div class="profile-info">
+                <div class="row">
+                    <div class="col-5 mt-3">Tên tài khoản:</div>
+                    <div class="col-7">
+                        <input type="text" name="username" class="form-control" value="@user.UserName" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Họ:</div>
+                    <div class="col-7">
+                        <input type="text" name="firstName" class="form-control" value="@user.FirstName" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Tên:</div>
+                    <div class="col-7">
+                        <input type="text" name="lastName" class="form-control" value="@user.LastName" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Email:</div>
+                    <div class="col-7">
+                        <input type="email" name="email" class="form-control" value="@user.Email" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Số điện thoại:</div>
+                    <div class="col-7">
+                        <input type="text" name="phone" class="form-control" value="@user.PhoneNumber" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Địa chỉ:</div>
+                    <div class="col-7">
+                        <input type="text" name="address" class="form-control" value="@user.Street" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Thành phố:</div>
+                    <div class="col-7">
+                        <input type="text" name="city" class="form-control" value="@user.City" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5 mt-3">Tỉnh:</div>
+                    <div class="col-7">
+                        <input type="text" name="province" class="form-control" value="@user.Province" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

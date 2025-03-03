@@ -1,0 +1,215 @@
+﻿
+@page
+@model HomeCare_EXE201.Pages.BookingPages.BookModel
+@{
+    Layout = "_LayoutBook";
+}
+<body>
+
+    <!-- Header (thanh trên cùng) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="address">
+                <p>Đại học FPT Hà Nội</p>
+                <p>Khu GD&ĐT, khu CNC Hoà Lạc, KM29, Đại lộ Thăng Long, huyện Thạch Thất, TP Hà Nội, Hanoi, Vietnam</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Phần nội dung chính -->
+    <main class="main-content">
+    <form method="post">
+        <!-- Thời lượng -->
+        <section class="time-section">
+            <h2>Thời lượng</h2>
+            <p class="description">Vui lòng ước tính chính xác diện tích cần dọn dẹp.</p>
+            <div class="time-options">
+                <!-- Thẻ thời lượng 1 -->
+                <div class="time-card" data-duration="2 giờ">
+                    <span class="time">2 giờ</span>
+                    <span class="details">85m² / 2 phòng</span>
+                </div>
+                <!-- Thẻ thời lượng 2 -->
+                <div class="time-card active" data-duration="3 giờ">
+                    <span class="time">3 giờ</span>
+                    <span class="details">95m² / 2 phòng</span>
+                </div>
+                <!-- Thẻ thời lượng 3 -->
+                <div class="time-card" data-duration="4 giờ">
+                    <span class="time">4 giờ</span>
+                    <span class="details">105m² / 3 phòng</span>
+                </div>
+            </div>
+            <!-- Input ẩn để binding SelectedDuration -->
+            <input type="hidden" id="selectedDuration" name="SelectedDuration" value="3 giờ" />
+        </section>
+
+        <!-- Dịch vụ thêm -->
+        <section class="extra-services">
+            <h2>Dịch vụ thêm</h2>
+            <div class="services-list">
+                <!-- Dịch vụ 1 -->
+                <div class="service-card" data-service="Nấu ăn">
+                    <div class="service-icon">🍳</div>
+                    <span>Nấu ăn</span>
+                </div>
+                <!-- Dịch vụ 2 -->
+                <div class="service-card" data-service="Ủi đồ">
+                    <div class="service-icon">👕</div>
+                    <span>Ủi đồ</span>
+                </div>
+                <!-- Dịch vụ 3 -->
+                <div class="service-card active" data-service="Hương liệu">
+                    <div class="service-icon">🌸</div>
+                    <span>Hương liệu</span>
+                </div>
+            </div>
+            <!-- Input ẩn để binding SelectedServices (dạng chuỗi, cách nhau bằng dấu phẩy) -->
+            <input type="hidden" id="selectedServices" name="SelectedServices" value="Hương liệu" />
+        </section>
+
+        <!-- Chọn thời gian làm việc -->
+        <section class="schedule-section">
+            <h2>Chọn thời gian làm việc</h2>
+            <!-- Phần chọn ngày -->
+            <div class="date-picker">
+                <div class="date-header">
+                    <span>Chọn ngày làm</span>
+                    <span class="month-year">Tháng 2/2025</span>
+                </div>
+                <div class="days">
+                    @foreach (var d in Model.DateList)
+                    {
+                        <div class="day-card" data-date="@d.ToString("yyyy-MM-dd")">
+                            <span>@("T" + ((int)d.DayOfWeek + 1))</span>
+                            <small>@d.Day</small>
+                        </div>
+                    }
+                    <!-- Input ẩn để binding SelectedDate -->
+                    <input type="hidden" id="selectedDate" name="SelectedDate" />
+                </div>
+            </div>
+
+            <!-- Lặp lại hàng tuần -->
+            <div class="repeat-toggle">
+                <label for="weekly-repeat">Lặp lại hàng tuần</label>
+                <label class="switch">
+                    <input type="checkbox" id="weekly-repeat" name="WeeklyRepeat" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="price" id="priceDisplay">180.000 VND/3h</div>
+                <!-- Input ẩn để binding Price -->
+                <input type="hidden" id="price" name="Price" value="180000" />
+                <button type="submit" class="next-button">Tiếp theo</button>
+            </div>
+        </footer>
+    </form>
+
+    </main>
+
+    <!-- Script JS để xử lý sự kiện và tính giá -->
+    <script>
+        // Bảng giá cơ bản cho thời lượng
+        const durationPrices = {
+            "2 giờ": 150000,
+            "3 giờ": 180000,
+            "4 giờ": 210000
+        };
+
+        // Phụ thu cho từng dịch vụ
+        const servicePrices = {
+            "Nấu ăn": 30000,
+            "Ủi đồ": 20000,
+            "Hương liệu": 25000
+        };
+
+        // Hàm tính giá dựa trên thời lượng và các dịch vụ đã chọn
+        function computePrice() {
+            // Lấy giá trị thời lượng hiện tại
+            const selectedDuration = document.getElementById('selectedDuration').value;
+            let basePrice = durationPrices[selectedDuration] || 0;
+
+            // Tính tổng phụ thu từ dịch vụ được chọn
+            const selectedServicesInput = document.getElementById('selectedServices').value;
+            let extraPrice = 0;
+            if (selectedServicesInput) {
+                const services = selectedServicesInput.split(',')
+                    .map(s => s.trim())
+                    .filter(s => s);
+                services.forEach(service => {
+                    extraPrice += servicePrices[service] || 0;
+                });
+            }
+
+            return basePrice + extraPrice;
+        }
+
+        // Hàm cập nhật hiển thị giá và binding giá vào input ẩn
+        function updatePriceDisplay() {
+            const price = computePrice();
+            // Cập nhật input ẩn "price"
+            document.getElementById('price').value = price;
+            // Format giá cho hiển thị (ví dụ: "180.000 VND")
+            const formattedPrice = price.toLocaleString('vi-VN') + " VND";
+            document.getElementById('priceDisplay').textContent = formattedPrice;
+        }
+
+        // Xử lý click trên các "time-card"
+        const timeCards = document.querySelectorAll('.time-card');
+        const selectedDurationInput = document.getElementById('selectedDuration');
+        timeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                timeCards.forEach(item => item.classList.remove('active'));
+                card.classList.add('active');
+                const duration = card.getAttribute('data-duration');
+                selectedDurationInput.value = duration;
+                updatePriceDisplay();
+            });
+        });
+
+        // Xử lý click trên các "service-card" (cho phép chọn nhiều)
+        const serviceCards = document.querySelectorAll('.service-card');
+        const selectedServicesInput = document.getElementById('selectedServices');
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('active');
+                const selectedServices = Array.from(serviceCards)
+                    .filter(c => c.classList.contains('active'))
+                    .map(c => c.getAttribute('data-service'));
+                selectedServicesInput.value = selectedServices.join(',');
+                updatePriceDisplay();
+            });
+        });
+
+        // Xử lý click trên các "day-card"
+        const dayCards = document.querySelectorAll('.day-card');
+        const selectedDateInput = document.getElementById('selectedDate');
+        dayCards.forEach(card => {
+            card.addEventListener('click', () => {
+                dayCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                const dateVal = card.getAttribute('data-date');
+                selectedDateInput.value = dateVal;
+            });
+        });
+
+        // Xử lý toggle checkbox "Lặp lại hàng tuần"
+        const weeklyRepeatCheckbox = document.getElementById('weekly-repeat');
+        weeklyRepeatCheckbox.addEventListener('change', () => {
+            if (weeklyRepeatCheckbox.checked) {
+                console.log("Đã bật lặp lại hàng tuần.");
+            } else {
+                console.log("Đã tắt lặp lại hàng tuần.");
+            }
+        });
+
+        // Gọi hàm cập nhật giá khi trang load
+        updatePriceDisplay();
+    </script>
+</body>

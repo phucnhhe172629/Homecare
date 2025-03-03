@@ -1,0 +1,159 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Guest.Pages.DangKyCongTacVienModel
+@{
+}
+
+
+    <style>
+
+
+    .container-dangky {
+        display: flex;
+        height: 100vh;
+    }
+        .left {
+            flex: 1;
+            background-color: #FFE4D1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .left h1 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .left p {
+                font-size: 18px;
+                line-height: 1.5;
+            }
+
+            .left a {
+                color: orange;
+                text-decoration: none;
+            }
+
+                .left a:hover {
+                    text-decoration: underline;
+                }
+
+        .right {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .right h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group input,
+            .form-group select {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+            .checkbox-group input {
+                margin-right: 10px;
+            }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+            .btn-submit:hover {
+                background-color: #e69500;
+            }
+
+    </style>
+
+<section class="banner-section d-flex justify-content-center align-items-end">
+    <div class="section-overlay"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-7 col-12">
+                <h1 class="text-white mb-lg-0">Contact</h1>
+            </div>
+
+            <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+    </section>
+
+<section class="section-padding">
+
+    <div class="container-dangky">
+        <div class="left">
+            <h1>Thu nhập nhiều hơn.<br>Cuộc sống tốt hơn.</h1>
+            <p>Giờ đây, bạn không chỉ dễ dàng kiếm tiền từ việc <a href="#">giúp việc nhà theo giờ</a>, mà còn chủ động về thời gian của bạn để cải thiện chất lượng cuộc sống.</p>
+        </div>
+        <div class="right">
+            <h2>Trở thành đối tác <br><b>Dọn dẹp nhà</b></h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Họ, tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Tuổi" required>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option>Hà Nội</option>
+                        <option>Hồ Chí Minh</option>
+                        
+                        <option>Đà Nẵng</option>
+                        <option>Cần Thơ</option>
+                    </select>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" required>
+                    <label>Tôi đồng ý việc đại diện từ bTaskee liên lạc với tôi qua số điện thoại mà tôi đăng ký.</label>
+                </div>
+                <button type="submit" class="btn-submit">Đăng ký nhận việc</button>
+            </form>
+        </div>
+    </div>
+
+</section>

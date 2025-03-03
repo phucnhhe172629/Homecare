@@ -1,0 +1,102 @@
+﻿@page
+@model HomeCare_EXE201.Pages.BookingPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].CleanerId)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Booking[0].ServiceId)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].CreateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].CreateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].UpdateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].UpdateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Booking) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CleanerId)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.ServiceId)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

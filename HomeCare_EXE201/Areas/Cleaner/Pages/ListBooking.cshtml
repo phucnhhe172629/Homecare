@@ -1,0 +1,292 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Cleaner.Pages.ListBookingModel
+@{
+    var booksList = Model.booksList;
+    var index = 1;
+    bool hasInProgress = booksList.Any(b => b.Status == "InProgress");
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#feedback-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-card-checklist"></i><span>Feedback</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="feedback-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>View reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Response feedback</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Average rating</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Feedback Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#support-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-telephone"></i><span>Support</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="support-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>F.A.Q</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Contact support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Work policies</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Support Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#setting-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-gear"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="setting-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Notifications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Language preferences</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-circle"></i><span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Setting Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="ViewProfile">
+                    <i class="bi bi-person"></i>
+                    <span>Profile</span>
+                </a>
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Left side columns -->
+                <div class="col-lg-12">
+                    <!-- Recent Sales -->
+                    <div class="col-12">
+                        <div class="card recent-sales overflow-auto">
+
+                            <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">Jobs/Tasks<span>| Today</span></h5>
+                                <table class="table table-borderless datatable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Customer</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Total Price</th>
+                                            <th scope="col">Detail</th>
+                                            <th scope="col" class="text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var booking in booksList)
+                                        {
+                                            <tr>
+                                                <th scope="row"><a href="#">@(index++)</a></th>
+                                                <td>@(booking.Customer.FirstName + " " + booking.Customer.LastName)</td>
+                                                <td>@(booking.Date?.ToString("yyyy-MM-dd") ?? "No Date")</td>
+                                                <td>@(booking.Address ?? "No Address")</td>
+                                                <td>@(booking.TotalPrice)</td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewServicesModal"
+                                                            onclick="loadServices(@booking.Id)">
+                                                        <i class="bi bi-eye"></i> View
+                                                    </button>
+                                                </td>
+                                                <td class="text-center">
+                                                    @if (booking.Status.Equals("Pending"))
+                                                    {
+                                                        <form method="post" asp-page-handler="Accept" asp-route-id="@booking.Id" class="d-inline">
+                                                            <button type="submit" class="btn btn-success btn-sm" @(hasInProgress && booking.Status != "InProgress" ? "disabled" : "")>
+                                                                <i class="bi bi-check-circle"></i> Accept
+                                                            </button>
+                                                        </form>
+                                                        <form method="post" asp-page-handler="Decline" asp-route-id="@booking.Id" class="d-inline">
+                                                            <button type="submit" class="btn btn-danger btn-sm" @(hasInProgress && booking.Status != "InProgress" ? "disabled" : "")>
+                                                                <i class="bi bi-x-circle"></i> Decline
+                                                            </button>
+                                                        </form>
+                                                    }
+                                                    else
+                                                    {
+                                                    <span class="badge bg-warning text-dark">In Progress</span>
+                                                    }
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <div class="modal fade" id="viewServicesModal" tabindex="-1" aria-labelledby="viewServicesLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="viewServicesLabel">Service List</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Service Name</th>
+                                                            <th>Price</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="serviceList">
+                                                        <!-- Danh sách dịch vụ sẽ được cập nhật bằng JavaScript -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Recent Sales -->
+                </div><!-- End Left side columns -->
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function loadServices(bookingId) {
+            fetch(`/ListBooking?handler=Services&bookingId=${bookingId}`)
+                .then(response => response.json())
+                .then(data => {
+                    let serviceListHtml = '';
+                    data.forEach((service, index) => {
+                        serviceListHtml += `
+                                <tr>
+                                    <td>${index + 1}</td>
+                                    <td>${service.name}</td>
+                                    <td>${service.price}</td>
+                                    <td>${service.description}</td>
+                                </tr>
+                            `;
+                    });
+
+                    document.getElementById("serviceList").innerHTML = serviceListHtml;
+                })
+                .catch(error => console.error("Error loading services:", error));
+        }
+    </script>
+
+</body>
+
+</html>

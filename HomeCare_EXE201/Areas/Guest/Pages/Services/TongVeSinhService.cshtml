@@ -1,0 +1,347 @@
+﻿@page
+@model HomeCare_EXE201.Pages.Services.TongVeSinhServiceModel
+@{
+}
+
+<style>
+
+
+   
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .section {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .icon {
+        font-size: 24px;
+        margin-right: 15px;
+    }
+
+    .section-content {
+        max-width: 80%;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    a {
+        color: orange;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+<main>
+
+    <section class="banner-section d-flex justify-content-center align-items-end">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-12">
+                    <h1 class="text-white mb-lg-0">Tổng vệ sinh</h1>
+                </div>
+
+                <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+
+                            <li class="breadcrumb-item active" aria-current="page">Tổng vệ sinh</li>
+                        </ol>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-detail-section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-image-wrap">
+                        <img src="../images/tong-ve-sinh-1.jpg" class="services-image img-fluid" alt="">
+                        <img src="../images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-info px-4 pt-4">
+                        <h2 class="mb-4">Tổng vệ sinh</h2>
+
+                        <h6>An toàn</h6>
+                        <p>Các cộng tác viên giúp việc theo giờ đều được bTaskee trực tiếp xác minh danh tính, nhân thân tốt></p>
+
+                        <h6 class="mt-4">Chuyên gia</h6>
+
+                        <p>Các cộng tác viên đều là các chuyên gia giúp việc được đào tạo kỹ năng dọn dẹp nhà cửa bài bản và luôn đảm bảo chất lượng trên từng công việc.</p>
+
+                        <h6>Tiết kiệm thời gian</h6>
+
+                        <p>Chỉ từ 60 giây thao tác nhanh chóng trên ứng dụng là khách hàng đã có ngay người giúp việc.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container">
+        <h1>Khác biệt của dịch vụ tổng vệ sinh so với giúp việc theo giờ</h1>
+        <div class="grid">
+            <div class="section">
+                <i class="fa-solid fa-magic icon"></i>
+                <div class="section-content">
+                    <h2>Tính chất công việc</h2>
+                    <p>Không chỉ thực hiện vệ sinh nhà cửa cơ bản (dọn dẹp, quét, lau nhà,...); dịch vụ tổng vệ sinh sẽ làm sạch từng chi tiết nhỏ nhất trong nhà bạn.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <i class="fa-solid fa-users icon"></i>
+                <div class="section-content">
+                    <h2>Đội ngũ</h2>
+                    <p>So với việc chỉ có một người giúp việc đến dọn dẹp như <a href="#">giúp việc theo giờ</a>, dịch vụ tổng vệ sinh luôn có nhóm nhân viên đảm bảo tiến độ và chất lượng công việc.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <i class="fa-regular fa-clock icon"></i>
+                <div class="section-content">
+                    <h2>Thời gian</h2>
+                    <p>Nếu như dọn dẹp là công việc hàng ngày thì tổng vệ sinh được khuyến khích thực hiện 2-3 tháng/lần và vào các dịp đặc biệt như Tết.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <i class="fa-solid fa-broom icon"></i>
+                <div class="section-content">
+                    <h2>Dụng cụ</h2>
+                    <p>Đội ngũ giúp việc bắt buộc phải mang theo các thiết bị, dụng cụ chuyên dụng hỗ trợ công việc, giúp khách hàng không tốn chi phí mua sắm thêm.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding section-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <h3 class="mb-4">Tổng vệ sinh bao gồm những công việc gì?</h3>
+                </div>
+
+                <div class="container">
+                    <div class="tabs">
+                        <button class="tab active" onclick="changeTab('congviecchung')">Công việc chung</button>
+                        <button class="tab" onclick="changeTab('nhabep')">Nhà bếp</button>
+                        <button class="tab" onclick="changeTab('nhatam')">Phòng tắm</button>
+                        <button class="tab" onclick="changeTab('phongngu')">Phòng ngủ</button>
+                    </div>
+
+                    <div class="content">
+                        <img id="room-image" src="../images/deep-cleaning-nha-bep.png" alt="Hình ảnh phòng">
+
+                        <div class="text">
+                            <h3 id="room-title">Công việc chung</h3>
+                            <ul id="room-tasks">
+                                <li>+ Rửa chén và xếp chén đĩa</li>
+                                <li>- Lau bụi và lau tất cả các bề mặt có thể tiếp cận</li>
+                                <li>- Lau mặt ngoài của tủ bếp, các thiết bị gia dụng</li>
+                                <li>- Lau các công tắc và tay cầm</li>
+                                <li>- Cọ rửa bếp</li>
+                                <li>- Lau mặt bàn</li>
+                                <li>- Làm sạch bồn rửa</li>
+                                <li>- Đổ rác</li>
+                                <li>- Quét và lau sàn nhà</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pricing-container">
+        <div class="pricing-title">Giá dịch vụ</div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>60m2</h3>
+                <p>(2 người - 3 tiếng)</p>
+                <hr>
+                <p class="price">450,000đ</p>
+            </div>
+            <div class="pricing-card">
+                <h3>80m2</h3>
+                <p>(2 người - 4 tiếng)</p>
+                <hr>
+                <p class="price">600,000đ</p>
+            </div>
+            <div class="pricing-card">
+                <h3>100m2</h3>
+                <p>(3 người - 3 tiếng)</p>
+                <hr>
+                <p class="price">675,000đ</p>
+            </div>
+        </div>
+        <div class="dot-indicator">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-lg-12 col-12">
+                    <h4 class="partners-section-title bg-white shadow-lg">Trusted by companies</h4>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/glorix.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/woocommerce.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/unilabs.svg" class="partners-image img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // Khai báo dữ liệu cho các phòng
+        const tongVeSinhroomData = {
+            congviecchung: {
+                title: "Công việc chung",
+                image: "../images/deep-cleaning-ve-sinh-chung.png",
+                tasks: [
+                    "- Quét mạng nhện",
+                    "- Lau sạch quạt trần",
+                    "- Phủi bụi trên rèm cửa, kẽ cửa sổ",
+                    "- Làm sạch bụi trên tất cả bề mặt đồ nội thất, đồ trang trí",
+                    "- Lau gương soi, cửa kính",
+                    "- Dọn sạch rác",
+                    "- Quét và lau sàn",
+                    "- Dọn sạch bậc cầu thang"
+                ]
+            },
+            nhabep: {
+                title: "Nhà bếp",
+                image: "../images/deep-cleaning-nha-bep.png",
+                tasks: [
+                    "- Làm sạch bàn ghế",
+                    "- Làm sạch mặt bếp và quạt hút mùi",
+                    "- Làm sạch các thiết bị gia dụng",
+                    "- Làm sạch mặt bàn",
+                    "- Lau sạch thiết bị điện tử",
+                    "- Cọ và làm sạch bồn rửa",
+                    "- Hút bụi và lau sàn"
+                ]
+            },
+            nhatam: {
+                title: "Nhà tắm",
+                image: "../images/deep-cleaning-nha-tam.png",
+                tasks: [
+                    "- Làm sạch toilet",
+                    "- Lau chùi sạch vòi sen, bồn tắm và bồn rửa",
+                    "- Lau công tắc điện, tay nắm cửa",
+                    "- Làm sạch bên ngoài tủ, gương và đồ đạc",
+                    "- Quét và lau sàn nhà"
+                ]
+            },
+            phongngu: {
+                title: "Phòng ngủ",
+                image: "../images/deep-cleaning-phong-ngu.png",
+                tasks: [
+                    "- Gấp chăn, sắp xếp gối",
+                    "- Lau bụi trên tủ, bàn làm việc",
+                    "- Thay ga giường, vỏ gối",
+                    "- Hút bụi sàn nhà",
+                    "- Lau kính cửa sổ"
+                ]
+            }
+        };
+
+        // Hàm thay đổi nội dung khi nhấn tab
+        function changeTab(room) {
+            // Cập nhật tiêu đề và hình ảnh
+            document.getElementById("room-title").textContent = tongVeSinhroomData[room].title;
+            document.getElementById("room-image").src = tongVeSinhroomData[room].image;
+
+            // Cập nhật danh sách công việc
+            const taskList = document.getElementById("room-tasks");
+            taskList.innerHTML = "";
+            tongVeSinhroomData[room].tasks.forEach(task => {
+                const li = document.createElement("li");
+                li.textContent = task;
+                taskList.appendChild(li);
+            });
+
+            // Cập nhật tab active
+            document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+            document.querySelector(`button[onclick="changeTab('${room}')"]`).classList.add("active");
+        }
+
+        // Đặt sự kiện mặc định khi trang tải lên
+        // changeTab('congviecchung');
+
+        // Cập nhật sự kiện cho các tab
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                const room = this.getAttribute('onclick').split("'")[1];
+                changeTab(room);
+            });
+        });
+    });
+
+</script>

@@ -1,0 +1,149 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\bootstrap-icons.css" />
+    <Content Remove="wwwroot\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\magnific-popup.css" />
+    <Content Remove="wwwroot\css\tooplate-clean-work.css" />
+    <Content Remove="wwwroot\fonts\bootstrap-icons.woff" />
+    <Content Remove="wwwroot\fonts\bootstrap-icons.woff2" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Bold.woff" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Bold.woff2" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Light.woff" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Light.woff2" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Regular.woff" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-Regular.woff2" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-SemiBold.woff" />
+    <Content Remove="wwwroot\fonts\Metropolis\Metropolis-SemiBold.woff2" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-01.jpg" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-02.jpg" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-03.jpg" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-04.jpg" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-05.jpg" />
+    <Content Remove="wwwroot\images\avatar\happy-customer-06.jpg" />
+    <Content Remove="wwwroot\images\bubbles.png" />
+    <Content Remove="wwwroot\images\cleaning-concept-with-man-showing-business-card.jpg" />
+    <Content Remove="wwwroot\images\coffe-shop-with-wooden-walls-unfocused.jpg" />
+    <Content Remove="wwwroot\images\coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" />
+    <Content Remove="wwwroot\images\disinfecting-home.jpg" />
+    <Content Remove="wwwroot\images\essential-goods-during-epidemic-prevention-protection.jpg" />
+    <Content Remove="wwwroot\images\high-angle-woman-cleaning-floors.jpg" />
+    <Content Remove="wwwroot\images\male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" />
+    <Content Remove="wwwroot\images\partners\glorix.svg" />
+    <Content Remove="wwwroot\images\partners\rolf-leasing.svg" />
+    <Content Remove="wwwroot\images\partners\toprak-leasing.svg" />
+    <Content Remove="wwwroot\images\partners\unilabs.svg" />
+    <Content Remove="wwwroot\images\partners\woocommerce.svg" />
+    <Content Remove="wwwroot\images\services\close-up-mop-cleaning-industrial-plant-floor.jpg" />
+    <Content Remove="wwwroot\images\services\man-polishing-car-inside-car-service.jpg" />
+    <Content Remove="wwwroot\images\services\man-polishing-car-inside.jpg" />
+    <Content Remove="wwwroot\images\services\people-taking-care-office-cleaning.jpg" />
+    <Content Remove="wwwroot\images\services\person-taking-care-office.jpg" />
+    <Content Remove="wwwroot\images\services\professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" />
+    <Content Remove="wwwroot\images\services\woman-holding-rag-detergent-cleaning-cooker.jpg" />
+    <Content Remove="wwwroot\images\services\young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" />
+    <Content Remove="wwwroot\images\slideshow\afro-woman-cleaning-window-with-rag-home.jpg" />
+    <Content Remove="wwwroot\images\slideshow\afro-woman-holding-bucket-with-cleaning-items.jpg" />
+    <Content Remove="wwwroot\images\slideshow\unrecognizable-cleaner-walking-into-hotel-room-with-tools-detergents.jpg" />
+    <Content Remove="wwwroot\images\teams\happy-young-woman-wiping-kitchen-counter-wearing-yellow-gloves.jpg" />
+    <Content Remove="wwwroot\images\teams\young-cleaning-man-wearing-casual-clothes.jpg" />
+    <Content Remove="wwwroot\js\animated-headline.js" />
+    <Content Remove="wwwroot\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\js\countdown.js" />
+    <Content Remove="wwwroot\js\counter.js" />
+    <Content Remove="wwwroot\js\custom.js" />
+    <Content Remove="wwwroot\js\init.js" />
+    <Content Remove="wwwroot\js\jquery.backstretch.min.js" />
+    <Content Remove="wwwroot\js\jquery.magnific-popup.min.js" />
+    <Content Remove="wwwroot\js\jquery.min.js" />
+    <Content Remove="wwwroot\js\magnific-popup-options.js" />
+    <Content Remove="wwwroot\js\modernizr.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap-icons.css" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\magnific-popup.css" />
+    <None Include="wwwroot\css\tooplate-clean-work.css" />
+    <None Include="wwwroot\fonts\bootstrap-icons.woff" />
+    <None Include="wwwroot\fonts\bootstrap-icons.woff2" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Bold.woff" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Bold.woff2" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Light.woff" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Light.woff2" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Regular.woff" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-Regular.woff2" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-SemiBold.woff" />
+    <None Include="wwwroot\fonts\Metropolis\Metropolis-SemiBold.woff2" />
+    <None Include="wwwroot\images\avatar\happy-customer-01.jpg" />
+    <None Include="wwwroot\images\avatar\happy-customer-02.jpg" />
+    <None Include="wwwroot\images\avatar\happy-customer-03.jpg" />
+    <None Include="wwwroot\images\avatar\happy-customer-04.jpg" />
+    <None Include="wwwroot\images\avatar\happy-customer-05.jpg" />
+    <None Include="wwwroot\images\avatar\happy-customer-06.jpg" />
+    <None Include="wwwroot\images\bubbles.png" />
+    <None Include="wwwroot\images\cleaning-concept-with-man-showing-business-card.jpg" />
+    <None Include="wwwroot\images\coffe-shop-with-wooden-walls-unfocused.jpg" />
+    <None Include="wwwroot\images\coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" />
+    <None Include="wwwroot\images\disinfecting-home.jpg" />
+    <None Include="wwwroot\images\essential-goods-during-epidemic-prevention-protection.jpg" />
+    <None Include="wwwroot\images\high-angle-woman-cleaning-floors.jpg" />
+    <None Include="wwwroot\images\male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" />
+    <None Include="wwwroot\images\partners\glorix.svg" />
+    <None Include="wwwroot\images\partners\rolf-leasing.svg" />
+    <None Include="wwwroot\images\partners\toprak-leasing.svg" />
+    <None Include="wwwroot\images\partners\unilabs.svg" />
+    <None Include="wwwroot\images\partners\woocommerce.svg" />
+    <None Include="wwwroot\images\services\close-up-mop-cleaning-industrial-plant-floor.jpg" />
+    <None Include="wwwroot\images\services\man-polishing-car-inside-car-service.jpg" />
+    <None Include="wwwroot\images\services\man-polishing-car-inside.jpg" />
+    <None Include="wwwroot\images\services\people-taking-care-office-cleaning.jpg" />
+    <None Include="wwwroot\images\services\person-taking-care-office.jpg" />
+    <None Include="wwwroot\images\services\professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" />
+    <None Include="wwwroot\images\services\woman-holding-rag-detergent-cleaning-cooker.jpg" />
+    <None Include="wwwroot\images\services\young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" />
+    <None Include="wwwroot\images\slideshow\afro-woman-cleaning-window-with-rag-home.jpg" />
+    <None Include="wwwroot\images\slideshow\afro-woman-holding-bucket-with-cleaning-items.jpg" />
+    <None Include="wwwroot\images\slideshow\unrecognizable-cleaner-walking-into-hotel-room-with-tools-detergents.jpg" />
+    <None Include="wwwroot\images\teams\happy-young-woman-wiping-kitchen-counter-wearing-yellow-gloves.jpg" />
+    <None Include="wwwroot\images\teams\young-cleaning-man-wearing-casual-clothes.jpg" />
+    <None Include="wwwroot\js\animated-headline.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\countdown.js" />
+    <None Include="wwwroot\js\counter.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\init.js" />
+    <None Include="wwwroot\js\jquery.backstretch.min.js" />
+    <None Include="wwwroot\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\magnific-popup-options.js" />
+    <None Include="wwwroot\js\modernizr.js" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="itext7" Version="8.0.2" />
+		<PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.2" />
+		<PackageReference Include="MailKit" Version="4.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.12">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+		<PackageReference Include="PdfiumViewer.Native.x86.v8-xfa" Version="2018.4.8.256" />
+		<PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\HomeCare_Common\HomeCare_Common.csproj" />
+	</ItemGroup>
+</Project>

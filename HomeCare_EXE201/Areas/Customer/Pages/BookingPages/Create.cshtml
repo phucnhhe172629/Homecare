@@ -1,0 +1,52 @@
+﻿@page
+@model HomeCare_EXE201.Pages.BookingPages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <form class="custom-form consulting-form bg-white shadow-lg mb-5 mb-lg-0" method="post">
+        <div class="consulting-form-header d-flex align-items-center">
+            <h3 class="mb-4">Booking cleaning service</h3>
+        </div>
+        <div class="consulting-form-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-select form-control">
+                <label asp-for="Booking.CleanerId" class="control-label">Cleaner</label>
+                <select asp-for="Booking.CleanerId" class="form-control" asp-items="ViewBag.CleanerId" required></select>
+                <span asp-validation-for="Booking.CleanerId" class="text-danger"></span>
+            </div>
+            @* <div class="form-group form-select form-control">
+                <label asp-for="Booking.ServiceId" class="control-label">Service</label>
+                <select asp-for="Booking.ServiceId" class="form-control" asp-items="ViewBag.ServiceId" required></select>
+                <span asp-validation-for="Booking.ServiceId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Booking.Address" class="control-label"></label>
+                <input asp-for="Booking.Address" class="form-control" required />
+                <span asp-validation-for="Booking.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Date" class="control-label"></label>
+                <input asp-for="Booking.Date" type="date" class="form-control" required />
+                <span asp-validation-for="Booking.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6 col-md-10 col-8 mx-auto">
+                <input type="submit" value="Create" class="btn btn-primary form-control" style="color: #fff"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

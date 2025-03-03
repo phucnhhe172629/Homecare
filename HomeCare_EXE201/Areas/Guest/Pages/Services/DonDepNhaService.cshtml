@@ -1,0 +1,210 @@
+﻿@page
+@model HomeCare_EXE201.Pages.Services.DonDepNhaServiceModel
+@{
+}
+
+<main>
+
+    <section class="banner-section d-flex justify-content-center align-items-end">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-12">
+                    <h1 class="text-white mb-lg-0">Dọn dẹp nhà</h1>
+                </div>
+
+                <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+
+                            <li class="breadcrumb-item active" aria-current="page">Dọn dẹp nhà</li>
+                        </ol>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-detail-section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-image-wrap">
+                        <img src="../images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
+                        <img src="../images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                 
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-info px-4 pt-4">
+                        <h2 class="mb-4">Dọn dẹp nhà</h2>
+
+                        <h6>An toàn</h6>
+                        <p>Các cộng tác viên giúp việc theo giờ đều được bTaskee trực tiếp xác minh danh tính, nhân thân tốt></p>
+
+                        <h6 class="mt-4">Chuyên gia</h6>
+
+                        <p>Các cộng tác viên đều là các chuyên gia giúp việc được đào tạo kỹ năng dọn dẹp nhà cửa bài bản và luôn đảm bảo chất lượng trên từng công việc.</p>
+
+                        <h6>Tiết kiệm thời gian</h6>
+
+                        <p>Chỉ từ 60 giây thao tác nhanh chóng trên ứng dụng là khách hàng đã có ngay người giúp việc.</p>
+                    </div>
+                    <a asp-page="/BookingPages/Book" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                        <span>Đặt ngay</span>
+
+                        <div class="marquee" aria-hidden="true">
+                            <div class="marquee__inner">
+                                <span>Đặt ngay</span>
+                                <span>Đặt ngay</span>
+                                <span>Đặt ngay</span>
+                                <span>Đặt ngay</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding pt-0">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <h2 class="mb-4">Photo gallery</h2>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-12">
+                    <a href="images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" class="image-popup">
+                        <img src="../images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" class="gallery-image img-fluid">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-12 my-4 my-lg-0 my-md-0">
+                    <a href="images/disinfecting-home.jpg" class="image-popup">
+                        <img src="../images/disinfecting-home.jpg" class="gallery-image img-fluid">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-12">
+                    <a href="images/essential-goods-during-epidemic-prevention-protection.jpg" class="image-popup">
+                        <img src="../images/essential-goods-during-epidemic-prevention-protection.jpg" class="gallery-image img-fluid">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding section-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <h3 class="mb-4">Cộng tác viên giúp việc theo giờ sẽ làm những gì?</h3>
+                </div>
+
+                <div class="container">
+                    <div class="tabs">
+                        <button class="tab active" onclick="changeTab('kitchen')">Dọn nhà bếp</button>
+                        <button class="tab" onclick="changeTab('bathroom')">Dọn phòng tắm</button>
+                        <button class="tab" onclick="changeTab('livingroom')">Phòng khách và khu vực chung</button>
+                        <button class="tab" onclick="changeTab('bedroom')">Phòng ngủ</button>
+                    </div>
+
+                    <div class="content">
+                        <img id="room-image" src="../images/deep-cleaning-nha-bep.png" alt="Hình ảnh phòng">
+                        
+                        <div class="text">
+                            <h3 id="room-title">Nhà bếp</h3>
+                            <ul id="room-tasks">
+                                <li>+ Rửa chén và xếp chén đĩa</li>
+                                <li>- Lau bụi và lau tất cả các bề mặt có thể tiếp cận</li>
+                                <li>- Lau mặt ngoài của tủ bếp, các thiết bị gia dụng</li>
+                                <li>- Lau các công tắc và tay cầm</li>
+                                <li>- Cọ rửa bếp</li>
+                                <li>- Lau mặt bàn</li>
+                                <li>- Làm sạch bồn rửa</li>
+                                <li>- Đổ rác</li>
+                                <li>- Quét và lau sàn nhà</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <div class="pricing-container">
+            <div class="pricing-title">Giá giúp việc theo giờ</div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Gói 2 giờ</h3>
+                    <p>(2 phòng - 55 m²)</p>
+                    <hr>
+                    <p class="price">168,000đ</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Gói 3 giờ</h3>
+                    <p>(3 phòng - 85 m²)</p>
+                    <hr>
+                    <p class="price">210,000đ</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Gói 4 giờ</h3>
+                    <p>(4 phòng - 105 m²)</p>
+                    <hr>
+                    <p class="price">266,000đ</p>
+                </div>
+            </div>
+            <div class="dot-indicator">
+                <div class="dot"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-lg-12 col-12">
+                    <h4 class="partners-section-title bg-white shadow-lg">Trusted by companies</h4>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/glorix.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/woocommerce.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/unilabs.svg" class="partners-image img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,257 @@
+﻿@page
+@model HomeCare_EXE201.Pages.Services.PhunKhuKhuanServiceModel
+@{
+}
+<main>
+
+    <section class="banner-section d-flex justify-content-center align-items-end">
+        <div class="section-overlay"></div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-7 col-12">
+                    <h1 class="text-white mb-lg-0">
+                        Dịch vụ
+                        Phun khử khuẩn
+                    </h1>
+                </div>
+
+                <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Dịch vụ
+                                Phun khử khuẩn
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-detail-section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-image-wrap">
+                        <img src="../images/disinfection-bedroom-phong-ngu.png" class="services-image img-fluid" alt="">
+                        <img src="../images/disinfection-kitchen-nha-bep.png" class="services-image services-image-hover img-fluid" alt="">
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="services-info px-4 pt-4">
+                        <h2 class="mb-4">
+                            Dịch vụ
+                            Phun khử khuẩn
+                        </h2>
+
+                        <h6>Cấp độ bảo vệ cao hơn cho ngôi nhà của bạn</h6>
+                        <p>
+                            Giảm nguy cơ lây nhiễm vi rút
+
+                            Xử lý khử trùng không độc hại, hoàn toàn an toàn
+
+                            Được Bộ Y tế liệt kê là một dịch vụ thiết yếu
+                        </p>
+
+                        <h6 class="mt-4">An toàn & hiệu quả</h6>
+
+                        <p>Thuốc khử trùng của chúng tôi có thể tiêu diệt 99,99% vi trùng, vi rút và được Tổ chức Y tế thế giới (WHO) chứng nhận.</p>
+
+                      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <section class="section-padding section-bg">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <h3 class="mb-4">Cộng tác viên giúp việc theo giờ sẽ làm những gì?</h3>
+                </div>
+
+                <div class="container">
+                    <div class="tabs">
+                        <button class="tab active" onclick="changeTab('phongkhach')">Phòng khách</button>
+                        <button class="tab" onclick="changeTab('nhabep')">Nhà bếp</button>
+                        <button class="tab" onclick="changeTab('nhavesinh')">Nhà vệ sinh</button>
+                        <button class="tab" onclick="changeTab('phongngu')">Phòng ngủ</button>
+                    </div>
+
+                    <div class="content">
+                        <img id="room-image" src="../images/disinfection-livingroom-phong-khach.png" alt="Hình ảnh phòng">
+
+                        <div class="text">
+                            <h3 id="room-title">Nhà bếp</h3>
+                            <ul id="room-tasks">
+                                <li>+ Rửa chén và xếp chén đĩa</li>
+                                <li>- Lau bụi và lau tất cả các bề mặt có thể tiếp cận</li>
+                                <li>- Lau mặt ngoài của tủ bếp, các thiết bị gia dụng</li>
+                                <li>- Lau các công tắc và tay cầm</li>
+                                <li>- Cọ rửa bếp</li>
+                                <li>- Lau mặt bàn</li>
+                                <li>- Làm sạch bồn rửa</li>
+                                <li>- Đổ rác</li>
+                                <li>- Quét và lau sàn nhà</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pricing-container">
+        <div class="pricing-title">Giá dịch vụ</div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Dưới 70m2</h3>
+                
+                <hr>
+                <p class="price">550,000đ</p>
+            </div>
+            <div class="pricing-card">
+                <h3>71 - 100m2</h3>
+
+                <hr>
+                <p class="price">700,000đ</p>
+            </div>
+            <div class="pricing-card">
+                <h3>101-200m2</h3>
+
+                <hr>
+                <p class="price">900,000đ</p>
+            </div>
+        </div>
+        <div class="dot-indicator">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-lg-12 col-12">
+                    <h4 class="partners-section-title bg-white shadow-lg">Trusted by companies</h4>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/glorix.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/woocommerce.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <img src="../images/partners/unilabs.svg" class="partners-image img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // Khai báo dữ liệu cho các phòng
+        const phunKhuKhuanroomData = {
+            phongkhach: {
+                title: "Phòng khách",
+                image: "../images/disinfection-livingroom-phong-khach.png",
+                tasks: [
+                    "- Phun toàn khu vực trần nhà, tường nhà, sàn nhà",
+                    "- Phun bề mặt cửa ra vào, cửa sổ…",
+                    "- Phun trên bề mặt và bên dưới các tủ, kệ, bàn, ghế…"
+                ]
+            },
+            nhabep: {
+                title: "Nhà bếp",
+                image: "../images/disinfection-kitchen-nha-bep.png",
+                tasks: [
+                    "- Phun toàn khu vực trần nhà, tường nhà, sàn nhà.",
+                    "- Phun trên bề mặt và bên dưới các tủ, kệ, bếp, bàn ăn, ghế ăn…"
+                ]
+            },
+            nhavesinh: {
+                title: "Nhà tắm",
+                image: "../images/disinfection-bathroom-nha-ve-sinh.png",
+                tasks: [
+                    "- Phun toàn khu vực trần nhà, tường nhà, sàn nhà.",
+                    "- Phun bên trong và bên ngoài bồn lavabo; bồn tắm.",
+                    "- Nếu nhà vệ sinh có phòng tắm bằng kính thì phải xịt lên toàn bộ bề mặt kính trong và ngoài."
+                ]
+            },
+            phongngu: {
+                title: "Phòng ngủ",
+                image: "../images/disinfection-bedroom-phong-ngu.png",
+                tasks: [
+                    "- Phun toàn khu vực trần nhà, tường nhà, sàn nhà.",
+                    "- Phun trên bề mặt tủ quần áo, bàn ghế.",
+                    "- Phun dưới gầm giường, gầm tủ, phía sau tủ."
+                ]
+            }
+        };
+
+        // Hàm thay đổi nội dung khi nhấn tab
+        function changeTab(room) {
+            // Cập nhật tiêu đề và hình ảnh
+            document.getElementById("room-title").textContent = phunKhuKhuanroomData[room].title;
+            document.getElementById("room-image").src = phunKhuKhuanroomData[room].image;
+
+            // Cập nhật danh sách công việc
+            const taskList = document.getElementById("room-tasks");
+            taskList.innerHTML = "";
+            phunKhuKhuanroomData[room].tasks.forEach(task => {
+                const li = document.createElement("li");
+                li.textContent = task;
+                taskList.appendChild(li);
+            });
+
+            // Cập nhật tab active
+            document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+            document.querySelector(`button[onclick="changeTab('${room}')"]`).classList.add("active");
+        }
+
+        // Đặt sự kiện mặc định khi trang tải lên
+        // changeTab('congviecchung');
+
+        // Cập nhật sự kiện cho các tab
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                const room = this.getAttribute('onclick').split("'")[1];
+                changeTab(room);
+            });
+        });
+    });
+
+</script>

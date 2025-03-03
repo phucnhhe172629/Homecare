@@ -1,0 +1,84 @@
+﻿@page
+@model HomeCare_EXE201.Pages.ReportPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].CreateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].CreateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].UpdateAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].UpdateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Report[0].Booking)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Report) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
