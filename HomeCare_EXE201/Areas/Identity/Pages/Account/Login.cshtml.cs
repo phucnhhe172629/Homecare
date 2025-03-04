@@ -129,11 +129,11 @@ namespace HomeCare_EXE201.Areas.Identity.Pages.Account
                     
                     if (await _userManager.IsInRoleAsync(user, "Customer"))
                     {
-                        returnUrl = "/Customer/Home";
+                        returnUrl = "/Guest/Index";
                     }
                     if (await _userManager.IsInRoleAsync(user, "Cleaner"))
                     {
-                        returnUrl = "/Cleaner/Home";
+                        returnUrl = "/Cleaner/ListBooking";
                     }
                     return LocalRedirect(returnUrl);
                 }

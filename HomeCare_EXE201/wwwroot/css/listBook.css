@@ -1,0 +1,108 @@
+﻿
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+    .header h1 {
+        font-size: 24px;
+        color: #333;
+    }
+
+/* Layout chính: chia 2 cột */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cột trái - danh sách thử thách */
+.main {
+    flex: 1;
+    padding: 24px;
+}
+
+.book-list {
+    list-style: none;
+}
+
+.book-item {
+    background-color: #fff;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.book-details {
+    max-width: 70%;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.book-meta {
+    font-size: 14px;
+    color: #666;
+}
+
+.book-button {
+    background-color: #5964e0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .book-button:hover {
+        background-color: #474fb6;
+    }
+
+/* Cột phải - sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 24px;
+    border-left: 1px solid #ccc;
+}
+
+.sidebar-section {
+    margin-bottom: 24px;
+}
+
+    .sidebar-section h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .sidebar-section ul {
+        list-style: none;
+    }
+
+    .sidebar-section li {
+        margin-bottom: 8px;
+        color: #666;
+    }

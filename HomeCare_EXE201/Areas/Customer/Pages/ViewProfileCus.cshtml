@@ -1,0 +1,97 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Cleaner.Pages.ViewProfileCusModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var user = Model.User;
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Người Dùng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/css/viewprofile.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    <div class="profile-container">
+        <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-img">
+
+        <div class="profile-info">
+            <h3>@(user.LastName + " " + user.FirstName)</h3>
+            @* <div class="status-toggle" onclick="toggleStatus()">
+                <form id="statusForm" method="POST" asp-page-handler="Status">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="userStatus" name="statusUpdate" value="@(user?.status ?? "Offline")">
+                    <i id="statusIcon" class="bi @(user.status == "Online" ? "bi-toggle-on text-success" : "bi-toggle-off text-dark")"
+                       style="cursor: pointer;"></i>
+                    <span id="statusText" class="ms-2">@(user.status == "Online" ? "Online" : "Offline")</span>
+                </form>
+            </div> *@
+
+            <div class="row">
+                <div class="col-5">Tên tài khoản:</div>
+                <div class="col-7">@user.UserName</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Email:</div>
+                <div class="col-7">@user.Email</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Số điện thoại:</div>
+                <div class="col-7">@user.PhoneNumber</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Địa chỉ:</div>
+                <div class="col-7">@user.Street</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Thành phố:</div>
+                <div class="col-7">@user.City</div>
+            </div>
+            <div class="row">
+                <div class="col-5">Tỉnh:</div>
+                <div class="col-7">@user.Province</div>
+            </div>
+        </div>
+
+        <a href="EditProfileCus" class="btn btn-edit">Chỉnh sửa hồ sơ</a>
+    </div>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var statusIcon = document.getElementById("statusIcon");
+        var statusText = document.getElementById("statusText");
+        var userStatusInput = document.getElementById("userStatus");
+        var statusForm = document.getElementById("statusForm");
+
+        function toggleStatus() {
+            if (statusIcon.classList.contains("bi-toggle-on")) {
+                statusIcon.classList.remove("bi-toggle-on", "text-success");
+                statusIcon.classList.add("bi-toggle-off", "text-dark");
+                statusText.textContent = "Offline";
+                userStatusInput.value = "Offline";
+            } else {
+                statusIcon.classList.remove("bi-toggle-off", "text-dark");
+                statusIcon.classList.add("bi-toggle-on", "text-success");
+                statusText.textContent = "Online";
+                userStatusInput.value = "Online";
+            }
+        }
+
+        statusIcon.addEventListener("click", toggleStatus);
+    });
+</script>
+

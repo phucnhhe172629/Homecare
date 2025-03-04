@@ -23,7 +23,7 @@ body {
 .header-content {
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     justify-content: space-between;
 }
@@ -361,8 +361,7 @@ input:checked + .slider {
     font-size: 1rem;
     transition: 0.3s;
 }
-
-    .next-button:hover {
+.next-button:hover {
         background-color: #27ae60;
     }
   

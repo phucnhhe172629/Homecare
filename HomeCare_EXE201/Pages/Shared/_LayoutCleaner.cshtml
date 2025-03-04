@@ -1,0 +1,126 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using HomeCare_EXE201.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home Care</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="~/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="~/css/tooplate-clean-work.css" rel="stylesheet">
+
+    <link href="~/css/table.css" rel="stylesheet">
+
+    <!--
+
+    Tooplate 2132 Clean Work
+
+    https://www.tooplate.com/view/2132-clean-work
+
+    Free Bootstrap 5 HTML Template
+
+    -->
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" asp-page="~/Guest/Index">
+                <img src="~/images/bubbles.png" class="logo img-fluid" alt="">
+
+                <span class="ms-2">Home Care</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cleaner/ListBooking">Home</a>
+                    </li>
+
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                               asp-area="Identity"
+                               asp-page="/Identity/Account/Login">
+                                @UserManager.GetUserName(User)
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <form id="logoutForm"
+                                  asp-area="Identity"
+                                  asp-page="/Account/Logout"
+                                  asp-route-returnUrl="@Url.Page("/Index", new { area = "Guest" })"
+                                  method="post">
+                                <button id="logout"
+                                        type="submit"
+                                        class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn text-dark border-0">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+
+                    }
+                    else
+                    {
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.backstretch.min.js"></script>
+    <script src="~/js/counter.js"></script>
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/init.js"></script>
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/animated-headline.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/table.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

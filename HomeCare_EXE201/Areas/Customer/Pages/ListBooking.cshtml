@@ -1,0 +1,46 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Customer.Pages.ListBookingModel
+@{
+    Layout = "~/Pages/Shared/_LayoutListBook.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Danh sách đặt lịch</h1>
+        <a class="nav-link" href="/Guest/Index">Home</a>
+    </div>
+    
+    <!-- Nội dung chính -->
+    <div class="container">
+        <!-- Cột trái: Danh sách book -->
+        <div class="main">
+            <ul class="book-list">
+                @foreach (var item in Model.Booking)
+                {
+                    <li class="book-item">
+                        <div class="book-details">
+                            <h2 class="book-title">Dọn dẹp nhà</h2>
+                            <p class="book-meta">@item.Status - @item.Date</p>
+                        </div>
+                        <a asp-area="Customer" asp-page="/BookDetail" asp-route-id="@item.Id" class="book-button">Chi tiết</a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!-- Cột phải: Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h3>STATUS</h3>
+                <ul>
+                    <li>Đã hoàn thành</li>
+                    <li>Chưa hoàn thành</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</body>

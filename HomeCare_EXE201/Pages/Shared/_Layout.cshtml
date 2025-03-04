@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using HomeCare_EXE201.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 @*     <meta charset="utf-8" />
@@ -42,7 +48,7 @@
     -->
 </head>
 <body>
-    @* <header class="site-header">
+    <header class="site-header">
         <div class="container">
             <div class="row">
 
@@ -56,12 +62,18 @@
                         <i class="bi-clock-fill me-2"></i>
                         <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
                     </p>
+                    <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+                        <i class="site-header-icon bi-whatsapp me-2"></i>
 
+                        <a href="https://www.facebook.com/profile.php?id=61572454073118" class="text-white">
+                            Our Fanpage
+                        </a>
+                    </p>
                     <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
                         <i class="site-header-icon bi-whatsapp me-2"></i>
 
                         <a href="tel: 110-220-9800" class="text-white">
-                            110 220 9800
+                            0813755786
                         </a>
                     </p>
                 </div>
@@ -72,8 +84,8 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" asp-page="/Index>
-                <img src="images/bubbles.png" class="logo img-fluid" alt="">
+            <a class="navbar-brand" asp-page="~/Guest/Index">
+                <img src="~/images/bubbles.png" class="logo img-fluid" alt="">
 
                 <span class="ms-2">Home Care</span>
             </a>
@@ -84,36 +96,73 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" asp-page="/Index">Home</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" asp-page="/About">Về chúng tôi</a>
+                        <a class="nav-link" href="/Guest/Index">Home</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trở thành đối tác</a>
 
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác dọn dẹp buồng phòng</a></li>
+                    @if (SignInManager.IsSignedIn(User)){
 
-                            <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác tổng vệ sinh</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Customer" asp-page="/ViewProfileCus">Thông tin cá nhân</a>
+                        </li>
 
-                            <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác phun khử khuẩn</a></li>
-                            <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác vệ sinh máy lạnh</a></li>
-                        </ul>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Customer" asp-page="/ListBooking">Danh sách đặt lịch</a>
+                        </li>
 
-                
 
-                    <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" asp-area="Identity" asp-page="/Identity/Account/Login">Đăng nhập</a>
-                    </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn"
+                               asp-area="Identity"
+                               asp-page="/Identity/Account/Login">
+                                @UserManager.GetUserName(User)
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <form id="logoutForm"
+                                  asp-area="Identity"
+                                  asp-page="/Account/Logout"
+                                  asp-route-returnUrl="@Url.Page("/Index", new { area = "Guest" })"
+                                  method="post">
+                                <button id="logout"
+                                        type="submit"
+                                        class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn text-dark border-0"
+                                        style="color:white">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+
+                    }else{
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/About">Về chúng tôi</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trở thành đối tác</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" asp-area="Guest" asp-page="/DangKyCongTacVien">Đối tác dọn dẹp buồng phòng</a></li>
+
+                                <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác tổng vệ sinh</a></li>
+
+                                <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác phun khử khuẩn</a></li>
+                                <li><a class="dropdown-item" asp-page="/DangKyCongTacVien">Đối tác vệ sinh máy lạnh</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" asp-area="Identity" asp-page="/Account/Login">Đăng nhập</a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
-    </nav> *@
+    </nav>
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -121,13 +170,13 @@
         </main>
     </div>
 
-    @* <footer class="site-footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
                     <div>
-                        <img src="images/bubbles.png" class="logo img-fluid" alt="">
+                        <img src="~/images/bubbles.png" class="logo img-fluid" alt="">
                     </div>
 
                     <ul class="footer-menu d-flex flex-wrap ms-5">
@@ -194,7 +243,7 @@
                         <i class="bi-telephone-fill me-2"></i>
 
                         <a href="tel: 110-220-9800" class="site-footer-link">
-                            110-220-9800
+                            0813755786
                         </a>
                     </p>
 
@@ -263,24 +312,21 @@
                 </div>
             </div>
         </div>
-    </footer> *@
+    </footer>
 
     <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.backstretch.min.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/animated-headline.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="../js/table.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.backstretch.min.js"></script>
+    <script src="~/js/counter.js"></script>
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/init.js"></script>
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/animated-headline.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/table.js"></script>
 
-    @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
- *@
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

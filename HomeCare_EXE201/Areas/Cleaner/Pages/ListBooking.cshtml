@@ -1,9 +1,11 @@
 ﻿@page
 @model HomeCare_EXE201.Areas.Cleaner.Pages.ListBookingModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     var booksList = Model.booksList;
     var index = 1;
     bool hasInProgress = booksList.Any(b => b.Status == "InProgress");
+    
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -50,74 +52,7 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#feedback-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-card-checklist"></i><span>Feedback</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="feedback-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>View reviews</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Response feedback</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Average rating</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Feedback Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#support-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-telephone"></i><span>Support</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="support-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>F.A.Q</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Contact support</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Work policies</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Support Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#setting-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-gear"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="setting-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Notifications</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Language preferences</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Setting Nav -->
+            
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="ViewProfile">
@@ -196,11 +131,13 @@
                                                     @if (booking.Status.Equals("Pending"))
                                                     {
                                                         <form method="post" asp-page-handler="Accept" asp-route-id="@booking.Id" class="d-inline">
+                                                            @Html.AntiForgeryToken()
                                                             <button type="submit" class="btn btn-success btn-sm" @(hasInProgress && booking.Status != "InProgress" ? "disabled" : "")>
                                                                 <i class="bi bi-check-circle"></i> Accept
                                                             </button>
                                                         </form>
                                                         <form method="post" asp-page-handler="Decline" asp-route-id="@booking.Id" class="d-inline">
+                                                            @Html.AntiForgeryToken()
                                                             <button type="submit" class="btn btn-danger btn-sm" @(hasInProgress && booking.Status != "InProgress" ? "disabled" : "")>
                                                                 <i class="bi bi-x-circle"></i> Decline
                                                             </button>
@@ -266,7 +203,7 @@
     <script src="assets/js/main.js"></script>
     <script>
         function loadServices(bookingId) {
-            fetch(`/ListBooking?handler=Services&bookingId=${bookingId}`)
+            fetch(`/Cleaner/ListBooking?handler=Services&bookingId=${bookingId}`)
                 .then(response => response.json())
                 .then(data => {
                     let serviceListHtml = '';

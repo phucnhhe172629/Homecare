@@ -1,7 +1,9 @@
 ﻿@page
 @model HomeCare_EXE201.Areas.Cleaner.Pages.ViewProfileModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     var user = Model.User;
+    Layout = "~/Pages/Shared/_LayoutCleaner.cshtml";
 }
 <!DOCTYPE html>
 <html lang="vi">
@@ -14,6 +16,9 @@
     <link href="~/assets/css/viewprofile.css" rel="stylesheet">
 </head>
 <body>
+
+
+
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success">@TempData["SuccessMessage"]</div>
@@ -25,8 +30,10 @@
             <h3>@(user.LastName + " " + user.FirstName)</h3>
             <div class="status-toggle" onclick="toggleStatus()">
                 <form id="statusForm" method="POST" asp-page-handler="Status">
-                    <input type="hidden" id="userStatus" name="statusUpdate" value="@user.status">
-                    <i id="statusIcon" class="bi @(user.status == "Online" ? "bi-toggle-on text-success" : "bi-toggle-off text-dark")"></i>
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" id="userStatus" name="statusUpdate" value="@(user?.status ?? "Offline")">
+                    <i id="statusIcon" class="bi @(user.status == "Online" ? "bi-toggle-on text-success" : "bi-toggle-off text-dark")"
+                       style="cursor: pointer;"></i>
                     <span id="statusText" class="ms-2">@(user.status == "Online" ? "Online" : "Offline")</span>
                 </form>
             </div>
@@ -64,23 +71,27 @@
 </html>
 
 <script>
-    function toggleStatus() {
+    document.addEventListener("DOMContentLoaded", function () {
         var statusIcon = document.getElementById("statusIcon");
         var statusText = document.getElementById("statusText");
         var userStatusInput = document.getElementById("userStatus");
+        var statusForm = document.getElementById("statusForm");
 
-        if (statusIcon.classList.contains("bi-toggle-on")) {
-            statusIcon.classList.remove("bi-toggle-on", "text-success");
-            statusIcon.classList.add("bi-toggle-off", "text-dark");
-            statusText.textContent = "Offline";
-            userStatusInput.value = "Offline";  
-        } else {
-            statusIcon.classList.remove("bi-toggle-off", "text-dark");
-            statusIcon.classList.add("bi-toggle-on", "text-success");
-            statusText.textContent = "Online";
-            userStatusInput.value = "Online";  
+        function toggleStatus() {
+            if (statusIcon.classList.contains("bi-toggle-on")) {
+                statusIcon.classList.remove("bi-toggle-on", "text-success");
+                statusIcon.classList.add("bi-toggle-off", "text-dark");
+                statusText.textContent = "Offline";
+                userStatusInput.value = "Offline";
+            } else {
+                statusIcon.classList.remove("bi-toggle-off", "text-dark");
+                statusIcon.classList.add("bi-toggle-on", "text-success");
+                statusText.textContent = "Online";
+                userStatusInput.value = "Online";
+            }
         }
 
-        document.getElementById("statusForm").submit();
-    }
+        statusIcon.addEventListener("click", toggleStatus);
+    });
 </script>
+

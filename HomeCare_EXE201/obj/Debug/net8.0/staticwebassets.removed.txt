@@ -1,2 +1,0 @@
-D:\Study\EXE201\HomeCare_EXE201\HomeCare_EXE201\wwwroot\css\site.css
-D:\Study\EXE201\HomeCare_EXE201\HomeCare_EXE201\wwwroot\js\site.js

@@ -3,7 +3,7 @@
     const roomData = {
         kitchen: {
             title: "Nhà bếp",
-            image: "../images/deep-cleaning-nha-bep.png",
+            image: "~/images/deep-cleaning-nha-bep.png",
             tasks: [
                 "- Rửa chén và xếp chén đĩa",
                 "- Lau bụi và lau tất cả các bề mặt có thể tiếp cận",
@@ -18,7 +18,7 @@
         },
         bathroom: {
             title: "Phòng tắm",
-            image: "../images/deep-cleaning-nha-tam.png",
+            image: "~/images/deep-cleaning-nha-tam.png",
             tasks: [
                 "- Cọ rửa bồn cầu, bồn rửa tay",
                 "- Lau kính và gương",
@@ -29,7 +29,7 @@
         },
         livingroom: {
             title: "Phòng khách và khu vực chung",
-            image: "../images/deep-cleaning-ve-sinh-chung.png",
+            image: "~/images/deep-cleaning-ve-sinh-chung.png",
             tasks: [
                 "- Lau bụi trên bàn, kệ, tivi",
                 "- Hút bụi thảm, ghế sofa",
@@ -40,7 +40,7 @@
         },
         bedroom: {
             title: "Phòng ngủ",
-            image: "../images/deep-cleaning-phong-ngu.png",
+            image: "~/images/deep-cleaning-phong-ngu.png",
             tasks: [
                 "- Gấp chăn, sắp xếp gối",
                 "- Lau bụi trên tủ, bàn làm việc",

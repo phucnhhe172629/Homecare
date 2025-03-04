@@ -2,8 +2,9 @@
 @model HomeCare_EXE201.Areas.Guest.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <main>
 
     <section class="hero-section hero-section-full-height d-flex justify-content-center align-items-center">
@@ -59,7 +60,7 @@
                 </div>
 
                 <div class="col-lg-6 col-12 custom-block-wrap">
-                    <img src="images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" class="img-fluid">
+                    <img src="~/images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" class="img-fluid">
 
                     <div class="custom-block d-flex flex-column">
                         <h6 class="text-white mb-3">Need Help? <br> Please call us:</h6>
@@ -93,8 +94,8 @@
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
                                     <a asp-page="/Services/DonDepNhaService">
-                                        <img src="images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
-                                        <img src="images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                        <img src="~/images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                         
                                     </a>
@@ -104,7 +105,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" asp-page="/Services/DonDepNhaService">Dọn dẹp nhà</a>
+                                        <a class="services-title-link" asp-area="Guest" asp-page="/Services/DonDepNhaService">Dọn dẹp nhà</a>
                                     </h4>
 
                                     <p>Các cộng tác viên giúp việc của bTaskee được trang bị phẩm chất tốt như đúng giờ, trung thực, chăm chỉ và linh hoạt trong công việc đảm bảo khách hàng yên tâm giao phó công việc mà không cần đắn đo về việc phải giám sát người giúp việc liên tục trong suốt ca làm.</p>
@@ -143,8 +144,8 @@
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
                                     <a asp-page="/Services/TongVeSinhService">
-                                        <img src="images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
-                                        <img src="images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                        <img src="~/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                         
                                     </a>
@@ -164,23 +165,23 @@
                                     </p>
 
                                     <div class="d-flex flex-wrap align-items-center">
-                                        <div class="reviews-icons">
+                                       @*  <div class="reviews-icons">
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
-                                        </div>
+                                        </div> *@
 
                                         <a asp-page="/Services/TongVeSinhService" class="custom-btn btn button button--atlas mt-2 ms-auto">
-                                            <span>Xem thêm</span>
+                                            <span>Dịch vụ chưa khả dụng</span>
 
                                             <div class="marquee" aria-hidden="true">
                                                 <div class="marquee__inner">
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -197,8 +198,8 @@
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
                                     <a asp-page="/Services/PhunKhuKhuanService">
-                                        <img src="../images/disinfection-livingroom-phong-khach.png" class="services-image img-fluid" alt="">
-                                        <img src="../images/disinfection-kitchen-nha-bep.png" class="services-image services-image-hover img-fluid" alt="">
+                                        <img src="~/images/disinfection-livingroom-phong-khach.png" class="services-image img-fluid" alt="">
+                                        <img src="~/images/disinfection-kitchen-nha-bep.png" class="services-image services-image-hover img-fluid" alt="">
 
                                        
                                     </a>
@@ -222,23 +223,23 @@
                                     </p>
 
                                     <div class="d-flex flex-wrap align-items-center">
-                                        <div class="reviews-icons">
+                                       @*  <div class="reviews-icons">
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
-                                        </div>
+                                        </div> *@
 
                                         <a asp-page="/Services/PhunKhuKhuanService" class="custom-btn btn button button--atlas mt-2 ms-auto">
-                                            <span>Xem thêm</span>
+                                            <span>Dịch vụ chưa khả dụng</span>
 
                                             <div class="marquee" aria-hidden="true">
                                                 <div class="marquee__inner">
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -255,8 +256,8 @@
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
                                     <a asp-page="/Services/VeSinhMayLanhService">
-                                        <img src="images/Air-Conditioner-cleaning.jpg" class="services-image img-fluid" alt="">
-                                        <img src="images/btaskee-giup-ban-ve-sinh-may-lanh.png" class="services-image services-image-hover img-fluid" alt="">
+                                        <img src="~/images/Air-Conditioner-cleaning.jpg" class="services-image img-fluid" alt="">
+                                        <img src="~/images/btaskee-giup-ban-ve-sinh-may-lanh.png" class="services-image services-image-hover img-fluid" alt="">
 
                                         
                                     </a>
@@ -272,23 +273,23 @@
                                     <p>Dịch vụ vệ sinh máy lạnh chuẩn 5 sao của HomeCare cam kết đem đến trải nghiệm tốt nhất cho Khách hàng!</p>
 
                                     <div class="d-flex flex-wrap align-items-center">
-                                        <div class="reviews-icons">
+                                        @* <div class="reviews-icons">
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star-fill"></i>
                                             <i class="bi-star"></i>
-                                        </div>
+                                        </div> *@
 
                                         <a asp-page="/Services/VeSinhMayLanhService" class="custom-btn btn button button--atlas mt-2 ms-auto">
-                                            <span>Xem thêm</span>
+                                            <span>Dịch vụ chưa khả dụng</span>
 
                                             <div class="marquee" aria-hidden="true">
                                                 <div class="marquee__inner">
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
-                                                    <span>Xem thêm</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
+                                                    <span>Dịch vụ chưa khả dụng</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -317,7 +318,7 @@
                 <div class="col-lg-4 col-12">
                     <div class="featured-block">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-01.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-01.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Marie</h4>
@@ -337,7 +338,7 @@
 
                     <div class="featured-block mb-lg-0">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-02.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-02.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Nana</h4>
@@ -359,7 +360,7 @@
                 <div class="col-lg-4 col-12">
                     <div class="featured-block">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-03.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-03.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Elon</h4>
@@ -379,7 +380,7 @@
 
                     <div class="featured-block mb-lg-0">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-04.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-04.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Josh</h4>
@@ -401,7 +402,7 @@
                 <div class="col-lg-4 col-12">
                     <div class="featured-block">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-05.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-05.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Katie</h4>
@@ -421,7 +422,7 @@
 
                     <div class="featured-block mb-lg-0">
                         <div class="d-flex align-items-center mb-3">
-                            <img src="images/avatar/happy-customer-06.jpg" class="avatar-image img-fluid">
+                            <img src="~/images/avatar/happy-customer-06.jpg" class="avatar-image img-fluid">
 
                             <div class="ms-3">
                                 <h4 class="mb-0">Shai</h4>
@@ -454,23 +455,23 @@
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="images/partners/glorix.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/glorix.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="images/partners/woocommerce.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/woocommerce.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="images/partners/unilabs.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/unilabs.svg" class="partners-image img-fluid">
                 </div>
 
             </div>

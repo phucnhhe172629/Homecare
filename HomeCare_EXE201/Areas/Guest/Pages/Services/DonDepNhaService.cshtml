@@ -1,8 +1,9 @@
 ﻿@page
 @model HomeCare_EXE201.Pages.Services.DonDepNhaServiceModel
 @{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <main>
 
     <section class="banner-section d-flex justify-content-center align-items-end">
@@ -36,8 +37,8 @@
 
                 <div class="col-lg-6 col-12">
                     <div class="services-image-wrap">
-                        <img src="../images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
-                        <img src="../images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+                        <img src="~/images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
+                        <img src="~/images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                  
                     </div>
@@ -58,7 +59,7 @@
 
                         <p>Chỉ từ 60 giây thao tác nhanh chóng trên ứng dụng là khách hàng đã có ngay người giúp việc.</p>
                     </div>
-                    <a asp-page="/BookingPages/Book" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                    <a asp-area="Customer" asp-page="/Book" class="custom-btn btn button button--atlas mt-2 ms-auto">
                         <span>Đặt ngay</span>
 
                         <div class="marquee" aria-hidden="true">
@@ -87,19 +88,19 @@
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <a href="images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" class="image-popup">
-                        <img src="../images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" class="gallery-image img-fluid">
+                        <img src="~/images/coronavirus-pandemic-disinfector-protective-suit-mask-sprays-disinfectants-house-office.jpg" class="gallery-image img-fluid">
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-12 my-4 my-lg-0 my-md-0">
                     <a href="images/disinfecting-home.jpg" class="image-popup">
-                        <img src="../images/disinfecting-home.jpg" class="gallery-image img-fluid">
+                        <img src="~/images/disinfecting-home.jpg" class="gallery-image img-fluid">
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-12">
                     <a href="images/essential-goods-during-epidemic-prevention-protection.jpg" class="image-popup">
-                        <img src="../images/essential-goods-during-epidemic-prevention-protection.jpg" class="gallery-image img-fluid">
+                        <img src="~/images/essential-goods-during-epidemic-prevention-protection.jpg" class="gallery-image img-fluid">
                     </a>
                 </div>
 
@@ -124,7 +125,7 @@
                     </div>
 
                     <div class="content">
-                        <img id="room-image" src="../images/deep-cleaning-nha-bep.png" alt="Hình ảnh phòng">
+                        <img id="room-image" src="~/images/deep-cleaning-nha-bep.png" alt="Hình ảnh phòng">
                         
                         <div class="text">
                             <h3 id="room-title">Nhà bếp</h3>
@@ -185,23 +186,23 @@
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="../images/partners/glorix.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/glorix.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="../images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="../images/partners/woocommerce.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/woocommerce.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="../images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
-                    <img src="../images/partners/unilabs.svg" class="partners-image img-fluid">
+                    <img src="~/images/partners/unilabs.svg" class="partners-image img-fluid">
                 </div>
 
             </div>

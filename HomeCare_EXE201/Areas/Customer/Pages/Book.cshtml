@@ -1,8 +1,7 @@
-﻿
-@page
+﻿@page
 @model HomeCare_EXE201.Pages.BookingPages.BookModel
 @{
-    Layout = "_LayoutBook";
+    Layout = "~/Pages/Shared/_LayoutBook.cshtml";
 }
 <body>
 
@@ -10,16 +9,17 @@
     <header class="header">
         <div class="header-content">
             <div class="address">
-                <p>Đại học FPT Hà Nội</p>
-                <p>Khu GD&ĐT, khu CNC Hoà Lạc, KM29, Đại lộ Thăng Long, huyện Thạch Thất, TP Hà Nội, Hanoi, Vietnam</p>
+               
+                <p>@Model.User.City - @Model.User.Province - @Model.User.Street</p>
             </div>
         </div>
     </header>
 
     <!-- Phần nội dung chính -->
     <main class="main-content">
-    <form method="post">
-        <!-- Thời lượng -->
+        <form method="post" action="/Customer/Book">
+            @Html.AntiForgeryToken()
+            <!-- Thời lượng -->
         <section class="time-section">
             <h2>Thời lượng</h2>
             <p class="description">Vui lòng ước tính chính xác diện tích cần dọn dẹp.</p>
@@ -106,7 +106,7 @@
                 <div class="price" id="priceDisplay">180.000 VND/3h</div>
                 <!-- Input ẩn để binding Price -->
                 <input type="hidden" id="price" name="Price" value="180000" />
-                <button type="submit" class="next-button">Tiếp theo</button>
+               <button type="submit" class="next-button">Tiếp theo</button>
             </div>
         </footer>
     </form>

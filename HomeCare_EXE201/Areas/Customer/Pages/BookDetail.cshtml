@@ -1,0 +1,95 @@
+﻿@page
+@model HomeCare_EXE201.Areas.Customer.Pages.BookDetailModel
+@{
+    Layout = "~/Pages/Shared/_LayoutBook.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<body>
+
+    <!-- Header (thanh trên cùng) -->
+    <header class="header">
+        <div class="header-content">
+            <h1 style="font-size: 1.1rem; margin: 0;">Thông tin đơn đặt dịch vụ</h1>
+            
+        </div>
+        <div class="header-content">
+            <a class="nav-link" href="/Guest/Index">Home</a>
+            <a  href="/Customer/ListBooking">  Danh sách </a>
+        </div>
+        
+    </header>
+
+    <!-- Phần nội dung chính -->
+    <main class="main-content">
+        <section class="confirmation-section">
+            <!-- Thông tin vị trí -->
+            <div class="confirm-card">
+                <h2 class="confirm-title">Vị trí</h2>
+                <div class="confirm-body">
+                    <p class="confirm-subinfo"> @Model.User.PhoneNumber </p>
+                    <p class="confirm-subinfo"> @Model.Booking.Address</p>
+                    <p class="confirm-subinfo">Nhà / Nhà riêng</p>
+                </div>
+            </div>
+
+            <!-- Thông tin công việc -->
+            <div class="confirm-card">
+                <h2 class="confirm-title">Thông tin công việc</h2>
+                <div class="confirm-body">
+                    <!-- Thời gian làm việc -->
+                    <div class="confirm-item">
+                        <h3>Thời gian làm việc</h3>
+                        <p>Ngày làm: <strong>@Model.Booking.Date</strong></p>
+
+                        <p>
+                            Ca làm: <strong>
+                                @{
+                                    var desc = Model.Service.Description ?? "";
+                                    // Tách theo dấu '-' và lấy phần tử đầu tiên
+                                    var shortDesc = desc.Split('-')[0];
+                                }
+                                @shortDesc
+                            </strong>
+                        </p>
+                    </div>
+                    <!-- Chi tiết công việc -->
+                    <div class="confirm-item">
+                        <h3>Chi tiết công việc</h3>
+                        
+                        <p>
+                            Dịch vụ thêm: <strong>
+                                @{
+                                    var desc1 = Model.Service.Description ?? "";
+                                    int dashIndex = desc.IndexOf('-');
+                                    // Nếu tìm thấy dấu '-'
+                                    if (dashIndex >= 0)
+                                    {
+                                        desc = desc.Substring(dashIndex + 1).Trim();
+                                    }
+                                }
+                                @desc
+                            </strong>
+                        </p>
+                    </div>
+
+                    <div class="confirm-item">
+                        <h3>Thanh toán</h3>
+
+                        <p>
+                            Tổng chi phí: <strong>
+                               @Model.Booking.TotalPrice VND
+                            </strong>
+                        </p>
+                    </div>
+                    @if (@Model.Booking.Status == "InProgress")
+                    {
+                        <form method="post" asp-page-handler="Confirm" asp-route-id="@Model.Booking.Id" class="d-inline">
+                            <button class="next-button">Xác nhận</button>
+                        </form>
+                    }
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+</body>

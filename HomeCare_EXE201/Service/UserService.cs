@@ -29,7 +29,6 @@ namespace HomeCare_EXE201.Service
 
             var customerId = _userManager.GetUserId(_contextAccessor.HttpContext.User);
            
-            //var currentUserId = _contextAccessor.HttpContext.Session.GetString("id");
             return _context.Users.FirstOrDefault(x => x.Id == Int32.Parse(customerId));
         }
     }

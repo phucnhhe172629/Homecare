@@ -1,4 +1,4 @@
-using HomeCare_EXE201.Models;
+﻿using HomeCare_EXE201.Models;
 using HomeCare_EXE201.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -10,6 +10,7 @@ namespace HomeCare_EXE201.Areas.Cleaner.Pages
         private readonly HomeCareExe201Context _context;
         private readonly IUserService _userService;
 
+        [BindProperty]
         public User User { get; set; }
         public EditProfileModel(HomeCareExe201Context context, IUserService userService)
         {
@@ -24,6 +25,7 @@ namespace HomeCare_EXE201.Areas.Cleaner.Pages
 
         public IActionResult OnPostUpdateProfile(string username, string firstName, string lastName, string email, string phone, string address, string city, string province)
         {
+            
             var user = _userService.GetCurrentUser();
             if (user == null)
             {
