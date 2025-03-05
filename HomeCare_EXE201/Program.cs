@@ -5,7 +5,7 @@ using HomeCare_EXE201.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'HomeCareExe201ContextConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("value") ?? throw new InvalidOperationException("Connection string 'HomeCareExe201ContextConnection' not found.");
 
 builder.Services.AddDbContext<HomeCareExe201Context>(options 
     => options.UseSqlServer(connectionString));

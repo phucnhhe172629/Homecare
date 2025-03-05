@@ -50,7 +50,7 @@ public partial class HomeCareExe201Context : IdentityDbContext<User, Role, int,
     {
         if (!optionsBuilder.IsConfigured)
         {
-            var ConnectionString = new ConfigurationBuilder().AddEnvironmentVariables().Build().GetConnectionString("DefaultConnection");
+            var ConnectionString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("value");
             optionsBuilder.UseSqlServer(ConnectionString);
         }
     }
