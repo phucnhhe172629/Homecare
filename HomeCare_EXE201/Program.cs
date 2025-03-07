@@ -11,7 +11,7 @@ builder.Services.AddDbContext<HomeCareExe201Context>(options
     => options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<User>(options => 
-    options.SignIn.RequireConfirmedAccount = true)
+    options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<Role>()
     .AddEntityFrameworkStores<HomeCareExe201Context>();
 
