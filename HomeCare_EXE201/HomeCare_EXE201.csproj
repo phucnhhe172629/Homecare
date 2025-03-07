@@ -129,6 +129,10 @@
 		<None Update="wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Update="wwwroot\**\*" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+	
+	<ItemGroup>
 		<PackageReference Include="itext7" Version="8.0.2" />
 		<PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.2" />
 		<PackageReference Include="MailKit" Version="4.2.0" />
