@@ -135,6 +135,10 @@ namespace HomeCare_EXE201.Areas.Identity.Pages.Account
                     {
                         returnUrl = "/Cleaner/ListBooking";
                     }
+                    if (await _userManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        returnUrl = "/Admin/ListBooking";
+                    }
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

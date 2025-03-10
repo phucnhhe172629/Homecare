@@ -84,9 +84,9 @@ namespace HomeCare_EXE201.Pages.BookingPages
             Booking.Customer = _context.Users.FirstOrDefault(u => u.Id == Booking.CustomerId);
             Booking.Status = BookingStatus.Pending.ToString();
             Booking.CreateAt = DateTime.Now;
-            Booking.CreateBy = "1";
+            Booking.CreateBy = customerId;
             Booking.UpdateAt = DateTime.Now;
-            Booking.UpdateBy = "1";
+            Booking.UpdateBy = customerId;
             Booking.IsDeleted = false;
 
             if (SelectedDate.HasValue)
@@ -107,9 +107,9 @@ namespace HomeCare_EXE201.Pages.BookingPages
             {
                 BookingId = Booking.Id,
                 CreateAt = DateTime.Now,
-                CreateBy = "1",
+                CreateBy = customerId,
                 UpdateAt = DateTime.Now,
-                UpdateBy = "1",
+                UpdateBy = customerId,
                 IsDeleted = false
             };
             _context.BookingDetails.Add(bookingDetail);
@@ -120,9 +120,9 @@ namespace HomeCare_EXE201.Pages.BookingPages
                 Price = Price,
                 Description = SelectedDuration + " - " + SelectedServices,
                 CreateAt = DateTime.Now,
-                CreateBy = "1",
+                CreateBy = customerId,
                 UpdateAt = DateTime.Now,
-                UpdateBy = "1"
+                UpdateBy = customerId
             };
             _context.Services.Add(service);
             _context.SaveChanges();
@@ -136,9 +136,9 @@ namespace HomeCare_EXE201.Pages.BookingPages
                 BookingId = Booking.Id,
                 ServiceId = service.Id,
                 CreateAt = DateTime.Now,
-                CreateBy = "1",
+                CreateBy = customerId,
                 UpdateAt = DateTime.Now,
-                UpdateBy = "1",
+                UpdateBy = customerId,
                 IsDeleted = false
             };
             _context.BookingServices.Add(bookingService);
