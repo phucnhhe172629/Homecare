@@ -79,13 +79,13 @@
             <div class="date-picker">
                 <div class="date-header">
                     <span>Chọn ngày làm</span>
-                    <span class="month-year">Tháng 2/2025</span>
+                    <span class="month-year">Tháng 3/2025</span>
                 </div>
                 <div class="days">
                     @foreach (var d in Model.DateList)
                     {
                         <div class="day-card" data-date="@d.ToString("yyyy-MM-dd")">
-                            <span>@("T" + ((int)d.DayOfWeek))</span>
+                            <span>@("T" + ((int)d.DayOfWeek + 1))</span>
                             <small>@d.Day</small>
                         </div>
                     }
