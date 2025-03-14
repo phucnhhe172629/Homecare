@@ -51,12 +51,9 @@ namespace HomeCare_EXE201.Pages.BookingPages
 
         public void OnGet()
         {
-            var today = DateTime.Today;
-            var start = today.AddDays(1);
-
             // Lấy 14 ngày từ hôm nay + 1, ví dụ 2 tuần
             var tempList = Enumerable.Range(0, 6)
-                                     .Select(i => start.AddDays(i))
+                                     .Select(i => DateTime.Today.AddDays(i))
                                      .ToList();
 
             // Chỉ giữ lại ngày có DayOfWeek != Sunday
