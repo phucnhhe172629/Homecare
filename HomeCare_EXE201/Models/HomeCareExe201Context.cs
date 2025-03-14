@@ -263,15 +263,12 @@ public partial class HomeCareExe201Context : IdentityDbContext<User, Role, int,
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.City)
                 .HasMaxLength(30)
-                .IsUnicode(false)
                 .HasColumnName("city");
             entity.Property(e => e.Country)
                 .HasMaxLength(30)
-                .IsUnicode(false)
                 .HasColumnName("country");
             entity.Property(e => e.status)
                 .HasMaxLength(30)
-                .IsUnicode(false)
                 .HasColumnName("status");
             entity.Property(e => e.Email).HasMaxLength(256);
             entity.Property(e => e.FirstName)
@@ -284,11 +281,9 @@ public partial class HomeCareExe201Context : IdentityDbContext<User, Role, int,
             entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
             entity.Property(e => e.Province)
                 .HasMaxLength(30)
-                .IsUnicode(false)
                 .HasColumnName("province");
             entity.Property(e => e.Street)
                 .HasMaxLength(50)
-                .IsUnicode(false)
                 .HasColumnName("street");
             entity.Property(e => e.UserName).HasMaxLength(256);
         });
