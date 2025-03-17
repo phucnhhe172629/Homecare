@@ -20,7 +20,7 @@ namespace HomeCare_EXE201.Areas.Cleaner.Pages
         }
         public void OnGet()
         {
-            booksList = _bookService.GetListBooking().Where(x => x.Status.Equals("Pending") || x.Status.Equals("InProgress")).ToList();
+            booksList = _bookService.GetListBooking().Where(x => x.Status.Equals("Pending") || x.Status.Equals("InProgress")).OrderByDescending(b => b.Date).ToList();
         }
 
         public IActionResult OnPostAccept(int id)

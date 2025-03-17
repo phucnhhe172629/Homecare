@@ -20,7 +20,7 @@ namespace HomeCare_EXE201.Areas.Admin.Pages
         }
         public void OnGet()
         {
-            booksList = _bookService.GetListBooking().ToList();
+            booksList = _bookService.GetListBooking().OrderByDescending(b => b.Date).ToList();
         }
 
         public JsonResult OnGetServices(int bookingId)
