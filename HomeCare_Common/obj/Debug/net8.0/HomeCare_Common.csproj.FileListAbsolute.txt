@@ -10,3 +10,15 @@ D:\Study\EXE201\HomeCare_EXE201\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common
 D:\Study\EXE201\HomeCare_EXE201\HomeCare_Common\obj\Debug\net8.0\refint\HomeCare_Common.dll
 D:\Study\EXE201\HomeCare_EXE201\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.pdb
 D:\Study\EXE201\HomeCare_EXE201\HomeCare_Common\obj\Debug\net8.0\ref\HomeCare_Common.dll
+D:\Study\EXE201\Homecare\HomeCare_Common\bin\Debug\net8.0\HomeCare_Common.deps.json
+D:\Study\EXE201\Homecare\HomeCare_Common\bin\Debug\net8.0\HomeCare_Common.dll
+D:\Study\EXE201\Homecare\HomeCare_Common\bin\Debug\net8.0\HomeCare_Common.pdb
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.AssemblyInfoInputs.cache
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.AssemblyInfo.cs
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.csproj.CoreCompileInputs.cache
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.sourcelink.json
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.dll
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\refint\HomeCare_Common.dll
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\HomeCare_Common.pdb
+D:\Study\EXE201\Homecare\HomeCare_Common\obj\Debug\net8.0\ref\HomeCare_Common.dll

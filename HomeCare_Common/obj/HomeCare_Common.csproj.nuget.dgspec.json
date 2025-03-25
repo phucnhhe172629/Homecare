@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\EXE201\\HomeCare_EXE201\\HomeCare_Common\\HomeCare_Common.csproj": {}
+    "D:\\Study\\EXE201\\Homecare\\HomeCare_Common\\HomeCare_Common.csproj": {}
   },
   "projects": {
-    "D:\\Study\\EXE201\\HomeCare_EXE201\\HomeCare_Common\\HomeCare_Common.csproj": {
+    "D:\\Study\\EXE201\\Homecare\\HomeCare_Common\\HomeCare_Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\EXE201\\HomeCare_EXE201\\HomeCare_Common\\HomeCare_Common.csproj",
+        "projectUniqueName": "D:\\Study\\EXE201\\Homecare\\HomeCare_Common\\HomeCare_Common.csproj",
         "projectName": "HomeCare_Common",
-        "projectPath": "D:\\Study\\EXE201\\HomeCare_EXE201\\HomeCare_Common\\HomeCare_Common.csproj",
+        "projectPath": "D:\\Study\\EXE201\\Homecare\\HomeCare_Common\\HomeCare_Common.csproj",
         "packagesPath": "C:\\Users\\phuc0\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\EXE201\\HomeCare_EXE201\\HomeCare_Common\\obj\\",
+        "outputPath": "D:\\Study\\EXE201\\Homecare\\HomeCare_Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
